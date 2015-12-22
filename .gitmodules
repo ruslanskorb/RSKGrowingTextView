@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/RSKPlaceholderTextView"]
+	path = Carthage/Checkouts/RSKPlaceholderTextView
+	url = https://github.com/ruslanskorb/RSKPlaceholderTextView.git

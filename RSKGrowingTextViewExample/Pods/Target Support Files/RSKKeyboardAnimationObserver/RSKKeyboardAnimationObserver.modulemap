@@ -1,0 +1,6 @@
+framework module RSKKeyboardAnimationObserver {
+  umbrella header "RSKKeyboardAnimationObserver-umbrella.h"
+
+  export *
+  module * { export * }
+}

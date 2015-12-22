@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RSKGrowingTextViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAZ-jB-kje" userLabel="Separator View">
+                                <rect key="frame" x="0.0" y="563" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9BR-Lk-9mp"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sus-C9-KEE" customClass="RSKGrowingTextView" customModule="RSKGrowingTextViewExample" customModuleProvider="target">
+                                <rect key="frame" x="12" y="564" width="576" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="uj4-gg-foU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write a message..."/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="IAZ-jB-kje" secondAttribute="trailing" id="03O-QY-b8B"/>
+                            <constraint firstAttribute="trailing" secondItem="Sus-C9-KEE" secondAttribute="trailing" constant="12" id="7qU-rM-dTg"/>
+                            <constraint firstItem="Sus-C9-KEE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="8Tl-fB-qTa"/>
+                            <constraint firstItem="IAZ-jB-kje" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sNp-W0-r0f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sus-C9-KEE" secondAttribute="bottom" id="vb1-eA-bmO"/>
+                            <constraint firstItem="Sus-C9-KEE" firstAttribute="top" secondItem="IAZ-jB-kje" secondAttribute="bottom" id="yTh-kk-2a2"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fiN-vF-k5y" appends="YES" id="njI-2W-Nh4"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint" destination="vb1-eA-bmO" id="bsd-Vd-ZoC"/>
+                        <outlet property="growingTextView" destination="Sus-C9-KEE" id="zKg-87-WvG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fiN-vF-k5y">
+                    <connections>
+                        <action selector="handleTapGestureRecognizer:" destination="BYZ-38-t0r" id="ZW7-Eq-Msa"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="305" y="355"/>
+        </scene>
+    </scenes>
+</document>
