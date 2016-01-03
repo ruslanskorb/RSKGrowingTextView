@@ -202,7 +202,7 @@ import RSKPlaceholderTextView
                     delay: 0.0,
                     options: [.AllowUserInteraction, .BeginFromCurrentState],
                     animations: { [unowned self] () -> Void in
-                        self.setHeiht(estimatedHeight)
+                        self.setHeight(estimatedHeight)
                         self.heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: estimatedHeight)
                         
                         self.superview?.layoutIfNeeded()
@@ -215,7 +215,7 @@ import RSKPlaceholderTextView
                     }
                 )
             } else {
-                setHeiht(estimatedHeight)
+                setHeight(estimatedHeight)
                 heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: estimatedHeight)
                 
                 superview?.layoutIfNeeded()
@@ -258,7 +258,7 @@ import RSKPlaceholderTextView
         }
     }
     
-    private func setHeiht(height: CGFloat) {
+    private func setHeight(height: CGFloat) {
         if let heightConstraint = self.heightConstraint {
             heightConstraint.constant = height
         } else if !constraints.isEmpty {
