@@ -117,9 +117,7 @@ enum RSKGrowingTextViewLayoutApproach {
     /// The minimum number of lines. The default value is `1`.
     @IBInspectable public var minimumNumberOfLines: Int = 1 {
         didSet {
-            if minimumNumberOfLines < 1 {
-                minimumNumberOfLines = 1
-            } else if minimumNumberOfLines > maximumNumberOfLines {
+            if minimumNumberOfLines > maximumNumberOfLines {
                 minimumNumberOfLines = maximumNumberOfLines
             }
             refreshHeightIfNeededAnimated(false)
@@ -199,11 +197,24 @@ enum RSKGrowingTextViewLayoutApproach {
     }
     
     private func heightForNumberOfLines(numberOfLines: Int) -> CGFloat {
-        var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
-        if let font = self.font {
-            height += font.lineHeight * CGFloat(numberOfLines)
+        let height: CGFloat
+        
+        if numberOfLines == 0 {
+            switch self.layoutApproach {
+            case .Constraint(let constraint):
+                height = constraint.constant
+            case .Frame:
+                height = frame.size.height
+            }
+        } else {
+            var textAreaHeight = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+            if let font = self.font {
+                textAreaHeight += font.lineHeight * CGFloat(numberOfLines)
+            }
+            height = ceil(textAreaHeight)
         }
-        return ceil(height)
+        
+        return height
     }
     
     private func refreshHeightIfNeededAnimated(animated: Bool) {
