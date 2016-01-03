@@ -39,6 +39,11 @@ import RSKPlaceholderTextView
     optional func growingTextView(textView: RSKGrowingTextView, willChangeHeightFrom growingTextViewHeightBegin: CGFloat, to growingTextViewHeightEnd: CGFloat)
 }
 
+enum RSKGrowingTextViewLayoutApproach {
+    case Constraint(NSLayoutConstraint)
+    case Frame
+}
+
 /// A light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
 @IBDesignable public class RSKGrowingTextView: RSKPlaceholderTextView {
 
@@ -63,11 +68,23 @@ import RSKPlaceholderTextView
         return height
     }
     
+    private var layoutApproach : RSKGrowingTextViewLayoutApproach {
+        let approach: RSKGrowingTextViewLayoutApproach
+        
+        if let constraint = self.heightConstraint {
+            approach = .Constraint(constraint)
+        } else {
+            approach = .Frame
+        }
+        
+        return approach
+    }
+    
     private let estimationLayoutManager = NSLayoutManager()
     
     private let estimationTextContainer = NSTextContainer()
     
-    private weak var heightConstraint: NSLayoutConstraint?
+    private weak var heightConstraint: NSLayoutConstraint? // when non-nil, changes will be applied to this, instead of the `frame`
     
     private var maxHeight: CGFloat { return heightForNumberOfLines(maximumNumberOfLines) }
     
@@ -259,13 +276,18 @@ import RSKPlaceholderTextView
     }
     
     private func setHeiht(height: CGFloat) {
-        if let heightConstraint = self.heightConstraint {
-            heightConstraint.constant = height
-        } else if !constraints.isEmpty {
-            invalidateIntrinsicContentSize()
-            setNeedsLayout()
-        } else {
-            frame.size.height = height
+        switch self.layoutApproach {
+        case .Constraint(let constraint):
+            constraint.constant = height
+            break
+        case .Frame:
+            if !constraints.isEmpty {
+                invalidateIntrinsicContentSize()
+                setNeedsLayout()
+            } else {
+                frame.size.height = height
+            }
+            break
         }
     }
 }
