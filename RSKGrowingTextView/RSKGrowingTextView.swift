@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-import RSKPlaceholderTextView
+import UIKit
 
 /// The `RSKGrowingTextViewDelegate` protocol extends the `UITextViewDelegate` protocol by providing a set of optional methods you can use to receive messages related to the change of the height of `RSKGrowingTextView` objects.
 @objc public protocol RSKGrowingTextViewDelegate: UITextViewDelegate {

@@ -42,6 +42,8 @@
 		B811FE051C1F31C4006CB9D6 /* RSKGrowingTextViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSKGrowingTextViewExampleUITests.swift; sourceTree = "<group>"; };
 		B811FE071C1F31C4006CB9D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B811FE131C1F33BE006CB9D6 /* RSKGrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSKGrowingTextView.swift; sourceTree = "<group>"; };
+		B89639061C3A508200270ECF /* RSKGrowingTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSKGrowingTextView.h; sourceTree = "<group>"; };
+		B89639071C3A50D600270ECF /* RSKGrowingTextViewExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSKGrowingTextViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B811FDF01C1F31C3006CB9D6 /* AppDelegate.swift */,
+				B89639071C3A50D600270ECF /* RSKGrowingTextViewExample-Bridging-Header.h */,
 				B811FDF21C1F31C3006CB9D6 /* ViewController.swift */,
 				B811FDF41C1F31C3006CB9D6 /* Main.storyboard */,
 				B811FDF71C1F31C3006CB9D6 /* Assets.xcassets */,
@@ -134,6 +137,7 @@
 		B811FE121C1F33BE006CB9D6 /* RSKGrowingTextView */ = {
 			isa = PBXGroup;
 			children = (
+				B89639061C3A508200270ECF /* RSKGrowingTextView.h */,
 				B811FE131C1F33BE006CB9D6 /* RSKGrowingTextView.swift */,
 			);
 			name = RSKGrowingTextView;
@@ -426,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -438,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
 			};
 			name = Release;
 		};

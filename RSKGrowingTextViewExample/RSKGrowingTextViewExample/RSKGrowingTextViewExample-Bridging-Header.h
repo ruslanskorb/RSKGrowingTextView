@@ -1,5 +1,5 @@
 //
-// Copyright 2015-present Ruslan Skorb, http://ruslanskorb.com/
+// Copyright 2016-present Ruslan Skorb, http://ruslanskorb.com/
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this work except in compliance with the License.
@@ -14,13 +14,9 @@
 // limitations under the License.
 //
 
-// `RSKGrowingTextView` is a light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
+#ifndef RSKGrowingTextViewExample_Bridging_Header_h
+#define RSKGrowingTextViewExample_Bridging_Header_h
 
-#import <UIKit/UIKit.h>
-@import RSKPlaceholderTextView;
+#import "RSKGrowingTextView.h"
 
-//! Project version number for RSKGrowingTextView.
-FOUNDATION_EXPORT double RSKGrowingTextViewVersionNumber;
-
-//! Project version string for RSKGrowingTextView.
-FOUNDATION_EXPORT const unsigned char RSKGrowingTextViewVersionString[];
+#endif /* RSKGrowingTextViewExample_Bridging_Header_h */
