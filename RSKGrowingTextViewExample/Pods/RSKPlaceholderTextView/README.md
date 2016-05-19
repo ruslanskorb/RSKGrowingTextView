@@ -1,4 +1,4 @@
-## RSKPlaceholderTextView [![Swift 2.1](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg)](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKPlaceholderTextView)
+## RSKPlaceholderTextView [![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg)](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKPlaceholderTextView)
 
 <p align="center">
   <img src="RSKPlaceholderTextViewExample/RSKPlaceholderTextViewExample.gif" alt="Sample">

@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B6E34E6C2DE70BC4C774D6E65EE7FFA /* RSKKeyboardAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C159ED8D8EBA624B170118E06469CF /* RSKKeyboardAnimationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47EC641C83CCD0769CB832F0EA9E7181 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		66128B10A2D4BB49E65F6F735AF3CAB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		6990961CBD694F1702E2FF383584DBF3 /* Pods-RSKGrowingTextViewExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1420816BCFCF1F5D81F05063C17C76D0 /* Pods-RSKGrowingTextViewExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A9F29718C6714450F0558E0FFFAAAF1 /* RSKPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEF4E4D086CDBDC862E037CF3E65EF /* RSKPlaceholderTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6C2370AF4BBE9E855785B24A236B6E74 /* Pods-RSKGrowingTextViewExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 137B2D43FA801059ABAD1B691356DF59 /* Pods-RSKGrowingTextViewExample-dummy.m */; };
-		8A79F152095C3DC2903EAD76216CE611 /* RSKPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61148D3819A2FDBE31619EC5480EC5A2 /* RSKPlaceholderTextView-dummy.m */; };
-		8ECEE9C1D8F19D3BA4974FB491503A00 /* RSKPlaceholderTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F68145C3BD2D00FE27A1D3C1358E08FC /* RSKPlaceholderTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FB40A1AC63425654C8427A0BC3771E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		90C0576FA405D92C0DBD7E970D0EE751 /* UIViewController+RSKKeyboardAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 14CD9E58977A546EEB83D92445CEF7CA /* UIViewController+RSKKeyboardAnimationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD42C7B961568E5FC6976D0C87CB25A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
-		B66698A29443CB479E93F74529F6EC21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
-		BD4EDE35D7CB46B9B0E4A66E54489519 /* RSKKeyboardAnimationObserver-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E53727E60F758D5E1ABE8652A32A5637 /* RSKKeyboardAnimationObserver-dummy.m */; };
-		EC036D5693E5C921942F82D9F20063DE /* RSKKeyboardAnimationObserver-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9A438906BDF39240C792E2465073C4 /* RSKKeyboardAnimationObserver-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FEE331CB9AADBDE41E74AFB97D76A05F /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87A895CD358BE1110C2F539F1C5D28 /* UIViewController+RSKKeyboardAnimationObserver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0668847EC79E6BBF22D203C81C071257 /* RSKKeyboardAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C159ED8D8EBA624B170118E06469CF /* RSKKeyboardAnimationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23CE8CB565588F67537EFBAEB0CC70A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		2470CAE3948C33BF4A24F6448B3568E7 /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87A895CD358BE1110C2F539F1C5D28 /* UIViewController+RSKKeyboardAnimationObserver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2E9FC95CAD5A217364B2718890C12588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		357C0B2741207340DCD21D6F070B38DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		3BCB7F6F3703F838A916F20AD92D6A6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		4A0CA8CF2006683F1763C136DDC8E622 /* Pods-RSKGrowingTextViewExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1420816BCFCF1F5D81F05063C17C76D0 /* Pods-RSKGrowingTextViewExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F02D321BD0C95179AA319C50727A7D1 /* RSKKeyboardAnimationObserver-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E53727E60F758D5E1ABE8652A32A5637 /* RSKKeyboardAnimationObserver-dummy.m */; };
+		9901F73AE16ECDE3F16706CF155C8F97 /* RSKPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CEF4E4D086CDBDC862E037CF3E65EF /* RSKPlaceholderTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C55D3A7E84845791F9D2B57E0515032B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		D41BA5A68760E3ED2A5E4FD277DDF42F /* RSKPlaceholderTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F68145C3BD2D00FE27A1D3C1358E08FC /* RSKPlaceholderTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5CE5D8BC4C9C1984847433AEC91331D /* RSKKeyboardAnimationObserver-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9A438906BDF39240C792E2465073C4 /* RSKKeyboardAnimationObserver-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E26B31D1B106B0EE5E42E1ACE1F7FA74 /* RSKPlaceholderTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61148D3819A2FDBE31619EC5480EC5A2 /* RSKPlaceholderTextView-dummy.m */; };
+		E7F2AAD6F757C8855E4BBCC1D6664DD0 /* Pods-RSKGrowingTextViewExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 137B2D43FA801059ABAD1B691356DF59 /* Pods-RSKGrowingTextViewExample-dummy.m */; };
+		F3E155276225B856AF795D9B30EB711F /* UIViewController+RSKKeyboardAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 14CD9E58977A546EEB83D92445CEF7CA /* UIViewController+RSKKeyboardAnimationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		285B9C8694B426E5BDF1428BF1A900E2 /* PBXContainerItemProxy */ = {
+		07392614F006AAAD8CA1A1D1ECB15E4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F2FE12A54D2952145EBDD6DCC23E8A8D;
-			remoteInfo = RSKPlaceholderTextView;
-		};
-		A88CBF593D01AF70AACF7D5CC415AF72 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DEF6BC0DAC3D3B2FE5D2512B1BDA5020;
+			remoteGlobalIDString = 64DAC9E0AC88F30C5F7F780DEC2CCA4D;
 			remoteInfo = RSKKeyboardAnimationObserver;
+		};
+		6ABC4B7C17484D38191F1895E9A37A7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C1BF1B3932E18E2DE284C3A5FEC8267;
+			remoteInfo = RSKPlaceholderTextView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -46,60 +46,60 @@
 		137B2D43FA801059ABAD1B691356DF59 /* Pods-RSKGrowingTextViewExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSKGrowingTextViewExample-dummy.m"; sourceTree = "<group>"; };
 		1420816BCFCF1F5D81F05063C17C76D0 /* Pods-RSKGrowingTextViewExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSKGrowingTextViewExample-umbrella.h"; sourceTree = "<group>"; };
 		14CD9E58977A546EEB83D92445CEF7CA /* UIViewController+RSKKeyboardAnimationObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RSKKeyboardAnimationObserver.h"; path = "RSKKeyboardAnimationObserver/UIViewController+RSKKeyboardAnimationObserver.h"; sourceTree = "<group>"; };
-		15A0F70C20C1B35C30A1E30C91AAE98E /* RSKPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D7F3BE91FB969D55D61D61C13935D9D /* Pods_RSKGrowingTextViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSKGrowingTextViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CEF4E4D086CDBDC862E037CF3E65EF /* RSKPlaceholderTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSKPlaceholderTextView.swift; path = RSKPlaceholderTextView/RSKPlaceholderTextView.swift; sourceTree = "<group>"; };
 		3794E5D504198AEB9FC9AACC5A999342 /* Pods-RSKGrowingTextViewExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSKGrowingTextViewExample-resources.sh"; sourceTree = "<group>"; };
 		41FD3F209B269C457A6852AD10792DEE /* Pods-RSKGrowingTextViewExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSKGrowingTextViewExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		5E9A438906BDF39240C792E2465073C4 /* RSKKeyboardAnimationObserver-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKKeyboardAnimationObserver-umbrella.h"; sourceTree = "<group>"; };
 		61148D3819A2FDBE31619EC5480EC5A2 /* RSKPlaceholderTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSKPlaceholderTextView-dummy.m"; sourceTree = "<group>"; };
 		6850689D6FA417D79F00BFAE32A64E89 /* RSKKeyboardAnimationObserver.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSKKeyboardAnimationObserver.xcconfig; sourceTree = "<group>"; };
-		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		726A41D6347CC8432F1DFE32F5BE4B27 /* RSKKeyboardAnimationObserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKKeyboardAnimationObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7578120C9E000177DF5B578EDA2144DA /* RSKPlaceholderTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKPlaceholderTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D754139345738F22B3235D9F598299E /* RSKPlaceholderTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSKPlaceholderTextView.xcconfig; sourceTree = "<group>"; };
-		98204261E49AFE43A8D00147FA62203F /* Pods_RSKGrowingTextViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSKGrowingTextViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF929BFA05EABA2E892BCC4CE2F947B /* RSKKeyboardAnimationObserver.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RSKKeyboardAnimationObserver.modulemap; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AD01D92DC51F50982FCE0212C4E8A71E /* RSKKeyboardAnimationObserver-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKKeyboardAnimationObserver-prefix.pch"; sourceTree = "<group>"; };
 		AF257DE7C474FF7E4C5B22C3AE628B7D /* Pods-RSKGrowingTextViewExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RSKGrowingTextViewExample.modulemap"; sourceTree = "<group>"; };
 		B3D10998A2175C7A63DFBC01E26F3C5F /* Pods-RSKGrowingTextViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSKGrowingTextViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		BA16A87B711E330A9BC4B0B53A116967 /* Pods-RSKGrowingTextViewExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSKGrowingTextViewExample-frameworks.sh"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAA903AC1ADA9AC6A5F41D1DD2A1AFF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB5BE83DB1F3126C30A47C51D8B4378C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC1C4901E88936CEE5E941A1D04C177 /* RSKPlaceholderTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKPlaceholderTextView-prefix.pch"; sourceTree = "<group>"; };
-		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CC0CE7DD861F9662B11DFB1B85370C07 /* Pods-RSKGrowingTextViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSKGrowingTextViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		D0889DEB768FAE0C6FF2E34273AF34A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53727E60F758D5E1ABE8652A32A5637 /* RSKKeyboardAnimationObserver-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSKKeyboardAnimationObserver-dummy.m"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EA8886A7C8C5838EEB550CF1D9D6E3B3 /* Pods-RSKGrowingTextViewExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSKGrowingTextViewExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F3C159ED8D8EBA624B170118E06469CF /* RSKKeyboardAnimationObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSKKeyboardAnimationObserver.h; path = RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver.h; sourceTree = "<group>"; };
 		F68145C3BD2D00FE27A1D3C1358E08FC /* RSKPlaceholderTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSKPlaceholderTextView-umbrella.h"; sourceTree = "<group>"; };
 		FC87A895CD358BE1110C2F539F1C5D28 /* UIViewController+RSKKeyboardAnimationObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RSKKeyboardAnimationObserver.m"; path = "RSKKeyboardAnimationObserver/UIViewController+RSKKeyboardAnimationObserver.m"; sourceTree = "<group>"; };
+		FEE1F00D625F785962FAD2BF6553A1E4 /* RSKKeyboardAnimationObserver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RSKKeyboardAnimationObserver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1CF1D63252FA2EEB26316B11DC4D9822 /* Frameworks */ = {
+		09BC7554BF9DA9D20622C8862FD2A778 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66128B10A2D4BB49E65F6F735AF3CAB0 /* Foundation.framework in Frameworks */,
-				B66698A29443CB479E93F74529F6EC21 /* UIKit.framework in Frameworks */,
+				3BCB7F6F3703F838A916F20AD92D6A6F /* Foundation.framework in Frameworks */,
+				C55D3A7E84845791F9D2B57E0515032B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AEAC5220444FC37689D3CD09A4CE006 /* Frameworks */ = {
+		0F50C5DFDB4A843FBDE1DA8ED169CB01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47EC641C83CCD0769CB832F0EA9E7181 /* Foundation.framework in Frameworks */,
+				23CE8CB565588F67537EFBAEB0CC70A8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B923CBE1E99CA89C6835F8AC22DE4F72 /* Frameworks */ = {
+		65E5A6E764BBBA29B0F43E0871C46262 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB40A1AC63425654C8427A0BC3771E0 /* Foundation.framework in Frameworks */,
-				AD42C7B961568E5FC6976D0C87CB25A3 /* UIKit.framework in Frameworks */,
+				2E9FC95CAD5A217364B2718890C12588 /* Foundation.framework in Frameworks */,
+				357C0B2741207340DCD21D6F070B38DB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,15 +115,6 @@
 				784A8D7F7261010FCE51C4B132921C58 /* Support Files */,
 			);
 			path = RSKKeyboardAnimationObserver;
-			sourceTree = "<group>";
-		};
-		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
-				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		430CF39A6B427235F187B012CBA9CE25 /* Pods-RSKGrowingTextViewExample */ = {
@@ -147,7 +138,7 @@
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18340F12838DEE43507667CC74401EB1 /* iOS */,
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,10 +169,10 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				52C0FA2F921A5127E50892BE9F218993 /* Pods */,
-				C14759F9A71509E02CD6BCB0DA4A93FA /* Products */,
+				8C66B82ECA11A0C780FE37B31927D5AA /* Products */,
 				8A458FB40E1D0B1052CE7362910FC004 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -203,12 +194,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C14759F9A71509E02CD6BCB0DA4A93FA /* Products */ = {
+		8C66B82ECA11A0C780FE37B31927D5AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98204261E49AFE43A8D00147FA62203F /* Pods_RSKGrowingTextViewExample.framework */,
-				726A41D6347CC8432F1DFE32F5BE4B27 /* RSKKeyboardAnimationObserver.framework */,
-				15A0F70C20C1B35C30A1E30C91AAE98E /* RSKPlaceholderTextView.framework */,
+				2D7F3BE91FB969D55D61D61C13935D9D /* Pods_RSKGrowingTextViewExample.framework */,
+				FEE1F00D625F785962FAD2BF6553A1E4 /* RSKKeyboardAnimationObserver.framework */,
+				7578120C9E000177DF5B578EDA2144DA /* RSKPlaceholderTextView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,81 +218,54 @@
 			path = "../Target Support Files/RSKPlaceholderTextView";
 			sourceTree = "<group>";
 		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3706611C8858AFD13185A469FD8AFA34 /* Headers */ = {
+		6F8EA28C1B790B575DE9A5E2B42B5DE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECEE9C1D8F19D3BA4974FB491503A00 /* RSKPlaceholderTextView-umbrella.h in Headers */,
+				D41BA5A68760E3ED2A5E4FD277DDF42F /* RSKPlaceholderTextView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AF914088F87E1070F5483326BA346E8 /* Headers */ = {
+		9558956793F019E72DAC452AF3ABD570 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC036D5693E5C921942F82D9F20063DE /* RSKKeyboardAnimationObserver-umbrella.h in Headers */,
-				1B6E34E6C2DE70BC4C774D6E65EE7FFA /* RSKKeyboardAnimationObserver.h in Headers */,
-				90C0576FA405D92C0DBD7E970D0EE751 /* UIViewController+RSKKeyboardAnimationObserver.h in Headers */,
+				D5CE5D8BC4C9C1984847433AEC91331D /* RSKKeyboardAnimationObserver-umbrella.h in Headers */,
+				0668847EC79E6BBF22D203C81C071257 /* RSKKeyboardAnimationObserver.h in Headers */,
+				F3E155276225B856AF795D9B30EB711F /* UIViewController+RSKKeyboardAnimationObserver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D106662576B6EE75E3CC898DB2549048 /* Headers */ = {
+		DC168D1BCC180B159F3D79075C039C88 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6990961CBD694F1702E2FF383584DBF3 /* Pods-RSKGrowingTextViewExample-umbrella.h in Headers */,
+				4A0CA8CF2006683F1763C136DDC8E622 /* Pods-RSKGrowingTextViewExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		819B752AE480B93F5C4F55740A48482D /* Pods-RSKGrowingTextViewExample */ = {
+		2C1BF1B3932E18E2DE284C3A5FEC8267 /* RSKPlaceholderTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5561E914A9EEB9DAAA71477EB4C15E9 /* Build configuration list for PBXNativeTarget "Pods-RSKGrowingTextViewExample" */;
+			buildConfigurationList = C582ED4631816635EE96DF0B08EF4140 /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */;
 			buildPhases = (
-				A1B42556A8BE439AC7AD784C00114C80 /* Sources */,
-				8AEAC5220444FC37689D3CD09A4CE006 /* Frameworks */,
-				D106662576B6EE75E3CC898DB2549048 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BD71429FF92CC2C0534FC675CA99C89 /* PBXTargetDependency */,
-				6F9189C9B325E089F93EB45CC914876D /* PBXTargetDependency */,
-			);
-			name = "Pods-RSKGrowingTextViewExample";
-			productName = "Pods-RSKGrowingTextViewExample";
-			productReference = 98204261E49AFE43A8D00147FA62203F /* Pods_RSKGrowingTextViewExample.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DEF6BC0DAC3D3B2FE5D2512B1BDA5020 /* RSKKeyboardAnimationObserver */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 691761460CD35DE6C7B0A2801D812174 /* Build configuration list for PBXNativeTarget "RSKKeyboardAnimationObserver" */;
-			buildPhases = (
-				1914A16F0B190B0257388300BDD416DB /* Sources */,
-				1CF1D63252FA2EEB26316B11DC4D9822 /* Frameworks */,
-				5AF914088F87E1070F5483326BA346E8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RSKKeyboardAnimationObserver;
-			productName = RSKKeyboardAnimationObserver;
-			productReference = 726A41D6347CC8432F1DFE32F5BE4B27 /* RSKKeyboardAnimationObserver.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F2FE12A54D2952145EBDD6DCC23E8A8D /* RSKPlaceholderTextView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B70A85E06BAAD3CE13FB6CC615906A4A /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */;
-			buildPhases = (
-				7442CE2A1769A9C5E648642F5B18BE35 /* Sources */,
-				B923CBE1E99CA89C6835F8AC22DE4F72 /* Frameworks */,
-				3706611C8858AFD13185A469FD8AFA34 /* Headers */,
+				1A857D2D348F999DB1383CD8E3020E8D /* Sources */,
+				65E5A6E764BBBA29B0F43E0871C46262 /* Frameworks */,
+				6F8EA28C1B790B575DE9A5E2B42B5DE3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -309,7 +273,43 @@
 			);
 			name = RSKPlaceholderTextView;
 			productName = RSKPlaceholderTextView;
-			productReference = 15A0F70C20C1B35C30A1E30C91AAE98E /* RSKPlaceholderTextView.framework */;
+			productReference = 7578120C9E000177DF5B578EDA2144DA /* RSKPlaceholderTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		64DAC9E0AC88F30C5F7F780DEC2CCA4D /* RSKKeyboardAnimationObserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17A97FC13A827A1B731CAFF55BFB9CCE /* Build configuration list for PBXNativeTarget "RSKKeyboardAnimationObserver" */;
+			buildPhases = (
+				9F78332D280009523F6C482C09293B39 /* Sources */,
+				09BC7554BF9DA9D20622C8862FD2A778 /* Frameworks */,
+				9558956793F019E72DAC452AF3ABD570 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSKKeyboardAnimationObserver;
+			productName = RSKKeyboardAnimationObserver;
+			productReference = FEE1F00D625F785962FAD2BF6553A1E4 /* RSKKeyboardAnimationObserver.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8F223801AE354E773D9DEE201A2E4277 /* Pods-RSKGrowingTextViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF556B8162FA1A2B357CBD63C57978E5 /* Build configuration list for PBXNativeTarget "Pods-RSKGrowingTextViewExample" */;
+			buildPhases = (
+				C799675C30C3E8782B80CCE745D7F5A7 /* Sources */,
+				0F50C5DFDB4A843FBDE1DA8ED169CB01 /* Frameworks */,
+				DC168D1BCC180B159F3D79075C039C88 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				816C8F0C9FF2E3BA9EC1D95D575573A7 /* PBXTargetDependency */,
+				D4E50A6BA3E9DDE51939B8E82D24DD8F /* PBXTargetDependency */,
+			);
+			name = "Pods-RSKGrowingTextViewExample";
+			productName = "Pods-RSKGrowingTextViewExample";
+			productReference = 2D7F3BE91FB969D55D61D61C13935D9D /* Pods_RSKGrowingTextViewExample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -318,7 +318,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -329,132 +329,104 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C14759F9A71509E02CD6BCB0DA4A93FA /* Products */;
+			productRefGroup = 8C66B82ECA11A0C780FE37B31927D5AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				819B752AE480B93F5C4F55740A48482D /* Pods-RSKGrowingTextViewExample */,
-				DEF6BC0DAC3D3B2FE5D2512B1BDA5020 /* RSKKeyboardAnimationObserver */,
-				F2FE12A54D2952145EBDD6DCC23E8A8D /* RSKPlaceholderTextView */,
+				8F223801AE354E773D9DEE201A2E4277 /* Pods-RSKGrowingTextViewExample */,
+				64DAC9E0AC88F30C5F7F780DEC2CCA4D /* RSKKeyboardAnimationObserver */,
+				2C1BF1B3932E18E2DE284C3A5FEC8267 /* RSKPlaceholderTextView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1914A16F0B190B0257388300BDD416DB /* Sources */ = {
+		1A857D2D348F999DB1383CD8E3020E8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD4EDE35D7CB46B9B0E4A66E54489519 /* RSKKeyboardAnimationObserver-dummy.m in Sources */,
-				FEE331CB9AADBDE41E74AFB97D76A05F /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */,
+				E26B31D1B106B0EE5E42E1ACE1F7FA74 /* RSKPlaceholderTextView-dummy.m in Sources */,
+				9901F73AE16ECDE3F16706CF155C8F97 /* RSKPlaceholderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7442CE2A1769A9C5E648642F5B18BE35 /* Sources */ = {
+		9F78332D280009523F6C482C09293B39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A79F152095C3DC2903EAD76216CE611 /* RSKPlaceholderTextView-dummy.m in Sources */,
-				6A9F29718C6714450F0558E0FFFAAAF1 /* RSKPlaceholderTextView.swift in Sources */,
+				5F02D321BD0C95179AA319C50727A7D1 /* RSKKeyboardAnimationObserver-dummy.m in Sources */,
+				2470CAE3948C33BF4A24F6448B3568E7 /* UIViewController+RSKKeyboardAnimationObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1B42556A8BE439AC7AD784C00114C80 /* Sources */ = {
+		C799675C30C3E8782B80CCE745D7F5A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C2370AF4BBE9E855785B24A236B6E74 /* Pods-RSKGrowingTextViewExample-dummy.m in Sources */,
+				E7F2AAD6F757C8855E4BBCC1D6664DD0 /* Pods-RSKGrowingTextViewExample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F9189C9B325E089F93EB45CC914876D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RSKPlaceholderTextView;
-			target = F2FE12A54D2952145EBDD6DCC23E8A8D /* RSKPlaceholderTextView */;
-			targetProxy = 285B9C8694B426E5BDF1428BF1A900E2 /* PBXContainerItemProxy */;
-		};
-		9BD71429FF92CC2C0534FC675CA99C89 /* PBXTargetDependency */ = {
+		816C8F0C9FF2E3BA9EC1D95D575573A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RSKKeyboardAnimationObserver;
-			target = DEF6BC0DAC3D3B2FE5D2512B1BDA5020 /* RSKKeyboardAnimationObserver */;
-			targetProxy = A88CBF593D01AF70AACF7D5CC415AF72 /* PBXContainerItemProxy */;
+			target = 64DAC9E0AC88F30C5F7F780DEC2CCA4D /* RSKKeyboardAnimationObserver */;
+			targetProxy = 07392614F006AAAD8CA1A1D1ECB15E4D /* PBXContainerItemProxy */;
+		};
+		D4E50A6BA3E9DDE51939B8E82D24DD8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSKPlaceholderTextView;
+			target = 2C1BF1B3932E18E2DE284C3A5FEC8267 /* RSKPlaceholderTextView */;
+			targetProxy = 6ABC4B7C17484D38191F1895E9A37A7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3F1EF67E1F4FEE282E1F0256C8267D43 /* Debug */ = {
+		270ACCF7872F779EE17914C86D780B16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3D10998A2175C7A63DFBC01E26F3C5F /* Pods-RSKGrowingTextViewExample.debug.xcconfig */;
+			baseConfigurationReference = 6850689D6FA417D79F00BFAE32A64E89 /* RSKKeyboardAnimationObserver.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-RSKGrowingTextViewExample/Info.plist";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKKeyboardAnimationObserver/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.modulemap";
+				MODULEMAP_FILE = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_RSKGrowingTextViewExample;
+				PRODUCT_NAME = RSKKeyboardAnimationObserver;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		4F69F2FCAF9F2A6AA39CAE045D238643 /* Debug */ = {
+		409CEB40C9BDE0277E058823CDBE0B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D754139345738F22B3235D9F598299E /* RSKPlaceholderTextView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSKPlaceholderTextView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = RSKPlaceholderTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		96FC54BBD128CC9FB917C8EAD844BDFC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D754139345738F22B3235D9F598299E /* RSKPlaceholderTextView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RSKPlaceholderTextView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -471,10 +443,11 @@
 			};
 			name = Release;
 		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -489,10 +462,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -510,71 +485,83 @@
 			};
 			name = Debug;
 		};
-		A9348186DCADC92F296F465AD3B2A0FA /* Debug */ = {
+		4D04E6D5E83071726BA82F6AFE9F847A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6850689D6FA417D79F00BFAE32A64E89 /* RSKKeyboardAnimationObserver.xcconfig */;
+			baseConfigurationReference = B3D10998A2175C7A63DFBC01E26F3C5F /* Pods-RSKGrowingTextViewExample.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSKKeyboardAnimationObserver/Info.plist";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RSKGrowingTextViewExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = RSKKeyboardAnimationObserver;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RSKGrowingTextViewExample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		CE5153535F150A7916EACD683C2F2578 /* Release */ = {
+		55A564A0914BE5C3DF803E7EF069EADE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6850689D6FA417D79F00BFAE32A64E89 /* RSKKeyboardAnimationObserver.xcconfig */;
+			baseConfigurationReference = 7D754139345738F22B3235D9F598299E /* RSKPlaceholderTextView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RSKKeyboardAnimationObserver/Info.plist";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKPlaceholderTextView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = RSKKeyboardAnimationObserver;
+				MODULEMAP_FILE = "Target Support Files/RSKPlaceholderTextView/RSKPlaceholderTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RSKPlaceholderTextView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		E24ACF6ED31253DEB2486D08DC04D336 /* Release */ = {
+		7C6589073B78385574C2D23E82903A0D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC0CE7DD861F9662B11DFB1B85370C07 /* Pods-RSKGrowingTextViewExample.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-RSKGrowingTextViewExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -585,6 +572,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_RSKGrowingTextViewExample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -594,10 +582,11 @@
 			};
 			name = Release;
 		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -614,7 +603,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -628,41 +620,70 @@
 			};
 			name = Release;
 		};
+		AF789A6691A8B4A1800ABF69610E767B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6850689D6FA417D79F00BFAE32A64E89 /* RSKKeyboardAnimationObserver.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSKKeyboardAnimationObserver/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSKKeyboardAnimationObserver/RSKKeyboardAnimationObserver.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RSKKeyboardAnimationObserver;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17A97FC13A827A1B731CAFF55BFB9CCE /* Build configuration list for PBXNativeTarget "RSKKeyboardAnimationObserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270ACCF7872F779EE17914C86D780B16 /* Debug */,
+				AF789A6691A8B4A1800ABF69610E767B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		691761460CD35DE6C7B0A2801D812174 /* Build configuration list for PBXNativeTarget "RSKKeyboardAnimationObserver" */ = {
+		C582ED4631816635EE96DF0B08EF4140 /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9348186DCADC92F296F465AD3B2A0FA /* Debug */,
-				CE5153535F150A7916EACD683C2F2578 /* Release */,
+				55A564A0914BE5C3DF803E7EF069EADE /* Debug */,
+				409CEB40C9BDE0277E058823CDBE0B87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B70A85E06BAAD3CE13FB6CC615906A4A /* Build configuration list for PBXNativeTarget "RSKPlaceholderTextView" */ = {
+		CF556B8162FA1A2B357CBD63C57978E5 /* Build configuration list for PBXNativeTarget "Pods-RSKGrowingTextViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F69F2FCAF9F2A6AA39CAE045D238643 /* Debug */,
-				96FC54BBD128CC9FB917C8EAD844BDFC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5561E914A9EEB9DAAA71477EB4C15E9 /* Build configuration list for PBXNativeTarget "Pods-RSKGrowingTextViewExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3F1EF67E1F4FEE282E1F0256C8267D43 /* Debug */,
-				E24ACF6ED31253DEB2486D08DC04D336 /* Release */,
+				4D04E6D5E83071726BA82F6AFE9F847A /* Debug */,
+				7C6589073B78385574C2D23E82903A0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

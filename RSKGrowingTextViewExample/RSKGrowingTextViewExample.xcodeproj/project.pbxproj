@@ -151,12 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B811FE0A1C1F31C4006CB9D6 /* Build configuration list for PBXNativeTarget "RSKGrowingTextViewExample" */;
 			buildPhases = (
-				3462999850D755F6A3401393 /* Check Pods Manifest.lock */,
+				3462999850D755F6A3401393 /* 📦 Check Pods Manifest.lock */,
 				B811FDE91C1F31C3006CB9D6 /* Sources */,
 				B811FDEA1C1F31C3006CB9D6 /* Frameworks */,
 				B811FDEB1C1F31C3006CB9D6 /* Resources */,
-				5B511F2915D467D482D8DD54 /* Embed Pods Frameworks */,
-				866343E76BCD98133BD3B811 /* Copy Pods Resources */,
+				5B511F2915D467D482D8DD54 /* 📦 Embed Pods Frameworks */,
+				866343E76BCD98133BD3B811 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,14 +244,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3462999850D755F6A3401393 /* Check Pods Manifest.lock */ = {
+		3462999850D755F6A3401393 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,14 +259,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5B511F2915D467D482D8DD54 /* Embed Pods Frameworks */ = {
+		5B511F2915D467D482D8DD54 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,14 +274,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		866343E76BCD98133BD3B811 /* Copy Pods Resources */ = {
+		866343E76BCD98133BD3B811 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

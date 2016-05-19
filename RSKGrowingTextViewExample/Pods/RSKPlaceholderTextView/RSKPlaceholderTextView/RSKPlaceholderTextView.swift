@@ -106,7 +106,7 @@ import UIKit
     
     private func commonInitializer() {
         contentMode = .TopLeft
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextViewTextDidChangeNotification:", name: UITextViewTextDidChangeNotification, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RSKPlaceholderTextView.handleTextViewTextDidChangeNotification(_:)), name: UITextViewTextDidChangeNotification, object: self)
     }
     
     internal func handleTextViewTextDidChangeNotification(notification: NSNotification) {
