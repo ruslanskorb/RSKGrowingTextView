@@ -16,6 +16,9 @@
 
 import UIKit
 
+/// The type of the block which contains user defined actions that will run during the height change.
+public typealias HeightChangeUserActionsBlockType = ((oldHeight: CGFloat, newHeight: CGFloat) -> Void)
+
 /// The `RSKGrowingTextViewDelegate` protocol extends the `UITextViewDelegate` protocol by providing a set of optional methods you can use to receive messages related to the change of the height of `RSKGrowingTextView` objects.
 @objc public protocol RSKGrowingTextViewDelegate: UITextViewDelegate {
     ///
@@ -41,7 +44,7 @@ import UIKit
 
 /// A light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
 @IBDesignable public class RSKGrowingTextView: RSKPlaceholderTextView {
-
+    
     // MARK: - Private Properties
     
     private var calculatedHeight: CGFloat {
@@ -85,7 +88,7 @@ import UIKit
     @IBInspectable public var heightChangeAnimationDuration: Double = 0.35
     
     /// The block which contains user defined actions that will run during the height change.
-    public var heightChangeUserActionsBlock: ((growingTextViewHeightBegin: CGFloat, growingTextViewHeightEnd: CGFloat) -> Void)?
+    public var heightChangeUserActionsBlock: HeightChangeUserActionsBlockType?
     
     /// The maximum number of lines before enabling scrolling. The default value is `5`.
     @IBInspectable public var maximumNumberOfLines: Int = 5 {
@@ -194,35 +197,34 @@ import UIKit
         let newHeight = calculatedHeight
         
         if oldHeight != newHeight {
+            typealias HeightChangeSetHeightBlockType = ((oldHeight: CGFloat, newHeight: CGFloat) -> Void)
+            let heightChangeSetHeightBlock: HeightChangeSetHeightBlockType = { (oldHeight: CGFloat, newHeight: CGFloat) -> Void in
+                self.setHeight(newHeight)
+                self.heightChangeUserActionsBlock?(oldHeight: oldHeight, newHeight: newHeight)
+                self.superview?.layoutIfNeeded()
+            }
+            typealias HeightChangeCompletionBlockType = ((oldHeight: CGFloat, newHeight: CGFloat) -> Void)
+            let heightChangeCompletionBlock: HeightChangeCompletionBlockType = { (oldHeight: CGFloat, newHeight: CGFloat) -> Void in
+                self.layoutManager.ensureLayoutForTextContainer(self.textContainer)
+                self.scrollToVisibleCaretIfNeeded()
+                self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
+            }
             growingTextViewDelegate?.growingTextView?(self, willChangeHeightFrom: oldHeight, to: newHeight)
-            
             if animated {
                 UIView.animateWithDuration(
                     heightChangeAnimationDuration,
                     delay: 0.0,
                     options: [.AllowUserInteraction, .BeginFromCurrentState],
-                    animations: { [unowned self] () -> Void in
-                        self.setHeight(newHeight)
-                        self.heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: newHeight)
-                        
-                        self.superview?.layoutIfNeeded()
+                    animations: { () -> Void in
+                        heightChangeSetHeightBlock(oldHeight: oldHeight, newHeight: newHeight)
                     },
-                    completion: { [unowned self] (finished: Bool) -> Void in
-                        self.layoutManager.ensureLayoutForTextContainer(self.textContainer)
-                        self.scrollToVisibleCaretIfNeeded()
-                        
-                        self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
+                    completion: { (finished: Bool) -> Void in
+                        heightChangeCompletionBlock(oldHeight: oldHeight, newHeight: newHeight)
                     }
                 )
             } else {
-                setHeight(newHeight)
-                heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: newHeight)
-                
-                superview?.layoutIfNeeded()
-                layoutManager.ensureLayoutForTextContainer(textContainer)
-                scrollToVisibleCaretIfNeeded()
-                
-                growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
+                heightChangeSetHeightBlock(oldHeight: oldHeight, newHeight: newHeight)
+                heightChangeCompletionBlock(oldHeight: oldHeight, newHeight: newHeight)
             }
         } else {
             scrollToVisibleCaretIfNeeded()
