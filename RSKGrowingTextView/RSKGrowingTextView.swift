@@ -44,16 +44,16 @@ import UIKit
 
     // MARK: - Private Properties
     
-    private var estimatedHeight: CGFloat {
-        let estimationTextStorage = NSTextStorage(attributedString: attributedText)
-        estimationTextStorage.addLayoutManager(estimationLayoutManager)
+    private var calculatedHeight: CGFloat {
+        let calculationTextStorage = NSTextStorage(attributedString: attributedText)
+        calculationTextStorage.addLayoutManager(calculationLayoutManager)
         
-        estimationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
-        estimationTextContainer.size = textContainer.size
+        calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
+        calculationTextContainer.size = textContainer.size
         
-        estimationLayoutManager.ensureLayoutForTextContainer(estimationTextContainer)
+        calculationLayoutManager.ensureLayoutForTextContainer(calculationTextContainer)
         
-        var height = estimationLayoutManager.usedRectForTextContainer(estimationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+        var height = calculationLayoutManager.usedRectForTextContainer(calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
         if height < minHeight {
             height = minHeight
         } else if height > maxHeight {
@@ -63,9 +63,9 @@ import UIKit
         return height
     }
     
-    private let estimationLayoutManager = NSLayoutManager()
+    private let calculationLayoutManager = NSLayoutManager()
     
-    private let estimationTextContainer = NSTextContainer()
+    private let calculationTextContainer = NSTextContainer()
     
     private weak var heightConstraint: NSLayoutConstraint?
     
@@ -160,7 +160,7 @@ import UIKit
         if heightConstraint != nil {
             return CGSizeMake(UIViewNoIntrinsicMetric, UIViewNoIntrinsicMetric)
         } else {
-            return CGSizeMake(UIViewNoIntrinsicMetric, estimatedHeight)
+            return CGSizeMake(UIViewNoIntrinsicMetric, calculatedHeight)
         }
     }
     
@@ -178,7 +178,7 @@ import UIKit
             }
         }
         
-        estimationLayoutManager.addTextContainer(estimationTextContainer)
+        calculationLayoutManager.addTextContainer(calculationTextContainer)
     }
     
     private func heightForNumberOfLines(numberOfLines: Int) -> CGFloat {
@@ -191,10 +191,10 @@ import UIKit
     
     private func refreshHeightIfNeededAnimated(animated: Bool) {
         let oldHeight = bounds.height
-        let estimatedHeight = self.estimatedHeight
+        let newHeight = calculatedHeight
         
-        if oldHeight != estimatedHeight {
-            growingTextViewDelegate?.growingTextView?(self, willChangeHeightFrom: oldHeight, to: estimatedHeight)
+        if oldHeight != newHeight {
+            growingTextViewDelegate?.growingTextView?(self, willChangeHeightFrom: oldHeight, to: newHeight)
             
             if animated {
                 UIView.animateWithDuration(
@@ -202,8 +202,8 @@ import UIKit
                     delay: 0.0,
                     options: [.AllowUserInteraction, .BeginFromCurrentState],
                     animations: { [unowned self] () -> Void in
-                        self.setHeight(estimatedHeight)
-                        self.heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: estimatedHeight)
+                        self.setHeight(newHeight)
+                        self.heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: newHeight)
                         
                         self.superview?.layoutIfNeeded()
                     },
@@ -211,18 +211,18 @@ import UIKit
                         self.layoutManager.ensureLayoutForTextContainer(self.textContainer)
                         self.scrollToVisibleCaretIfNeeded()
                         
-                        self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: estimatedHeight)
+                        self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
                     }
                 )
             } else {
-                setHeight(estimatedHeight)
-                heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: estimatedHeight)
+                setHeight(newHeight)
+                heightChangeUserActionsBlock?(growingTextViewHeightBegin: oldHeight, growingTextViewHeightEnd: newHeight)
                 
                 superview?.layoutIfNeeded()
                 layoutManager.ensureLayoutForTextContainer(textContainer)
                 scrollToVisibleCaretIfNeeded()
                 
-                growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: estimatedHeight)
+                growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
             }
         } else {
             scrollToVisibleCaretIfNeeded()
