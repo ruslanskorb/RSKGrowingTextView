@@ -98,7 +98,12 @@ import UIKit
         }
         placeholderAttributes[NSForegroundColorAttributeName] = placeholderColor
         
-        let placeholderRect = CGRectInset(rect, contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, contentInset.top + textContainerInset.top)
+        let placeholderInsets = UIEdgeInsets(top: contentInset.top + textContainerInset.top,
+                                             left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding,
+                                             bottom: contentInset.bottom + textContainerInset.bottom,
+                                             right: contentInset.right + textContainerInset.right + textContainer.lineFragmentPadding)
+        
+        let placeholderRect = UIEdgeInsetsInsetRect(rect, placeholderInsets)
         placeholder.drawInRect(placeholderRect, withAttributes: placeholderAttributes)
     }
     
