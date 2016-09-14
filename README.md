@@ -1,4 +1,4 @@
-## RSKGrowingTextView [![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg)](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKGrowingTextView)
+## RSKGrowingTextView [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg)](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKGrowingTextView)
 
 <p align="center">
   <img src="RSKGrowingTextViewExample/RSKGrowingTextViewExample.gif" alt="Sample">

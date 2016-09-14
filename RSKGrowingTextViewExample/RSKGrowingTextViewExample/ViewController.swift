@@ -20,13 +20,13 @@ class ViewController: UIViewController {
     
     // MARK: - Object Lifecycle
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.registerForKeyboardNotifications()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         self.unregisterForKeyboardNotifications()
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     // MARK: - Helper Methods
     
-    private func adjustContentForKeyboardRect(keyboardRect: CGRect) {
+    private func adjustContent(for keyboardRect: CGRect) {
         let keyboardHeight = keyboardRect.height
         let keyboardYPosition = self.isVisibleKeyboard ? keyboardHeight : 0.0;
         self.bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint.constant = keyboardYPosition
@@ -46,19 +46,18 @@ class ViewController: UIViewController {
     }
     
     private func registerForKeyboardNotifications() {
-        self.rsk_subscribeKeyboardWithBeforeWillShowOrHideAnimation(nil,
+        self.rsk_subscribeKeyboardWith(beforeWillShowOrHideAnimation: nil,
             willShowOrHideAnimation: { [unowned self] (keyboardRectEnd, duration, isShowing) -> Void in
                 self.isVisibleKeyboard = isShowing
-                self.adjustContentForKeyboardRect(keyboardRectEnd)
+                self.adjustContent(for: keyboardRectEnd)
             }, onComplete: { (finished, isShown) -> Void in
                 self.isVisibleKeyboard = isShown
             }
         )
         
-        self.rsk_subscribeKeyboardWithWillChangeFrameAnimation(
-            { [unowned self] (keyboardRectEnd, duration) -> Void in
-                self.adjustContentForKeyboardRect(keyboardRectEnd)
-            }, onComplete: nil)
+        self.rsk_subscribeKeyboard(willChangeFrameAnimation: { [unowned self] (keyboardRectEnd, duration) -> Void in
+            self.adjustContent(for: keyboardRectEnd)
+        }, onComplete: nil)
     }
     
     private func unregisterForKeyboardNotifications() {

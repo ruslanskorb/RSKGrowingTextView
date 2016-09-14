@@ -1,4 +1,4 @@
-## RSKPlaceholderTextView [![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg)](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKPlaceholderTextView)
+## RSKPlaceholderTextView [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg)](https://img.shields.io/cocoapods/v/RSKPlaceholderTextView.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/ruslanskorb/RSKPlaceholderTextView)
 
 <p align="center">
   <img src="RSKPlaceholderTextViewExample/RSKPlaceholderTextViewExample.gif" alt="Sample">
@@ -29,6 +29,27 @@ A light-weight UITextView subclass that adds support for placeholder.
         github "ruslanskorb/RSKPlaceholderTextView"
 
 2.  Run `carthage update`, then follow the [additional steps required](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the iOS and/or Mac frameworks into your project.
+
+## Basic Usage
+
+Import the module.
+
+```swift
+import RSKPlaceholderTextView
+```
+
+Just create a text view and set the placeholder.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.textView = RSKPlaceholderTextView(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 100))
+    self.textView.placeholder = "What do you want to say about this event?"
+
+    self.view.addSubview(self.textView)
+}
+```
 
 ## Demo
 

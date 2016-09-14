@@ -14,7 +14,7 @@
 		B811FDFB1C1F31C3006CB9D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FDF91C1F31C3006CB9D6 /* LaunchScreen.storyboard */; };
 		B811FE061C1F31C4006CB9D6 /* RSKGrowingTextViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE051C1F31C4006CB9D6 /* RSKGrowingTextViewExampleUITests.swift */; };
 		B811FE141C1F33BE006CB9D6 /* RSKGrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE131C1F33BE006CB9D6 /* RSKGrowingTextView.swift */; };
-		EBBBE96936DFE64A9B1E10E9 /* Pods_RSKGrowingTextViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAEBFB07B8E5E2B195AB8D1 /* Pods_RSKGrowingTextViewExample.framework */; };
+		F015AA2B49608224C0C20AC7 /* Pods_RSKGrowingTextViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7246D988AE472318BBA3B0 /* Pods_RSKGrowingTextViewExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BAEBFB07B8E5E2B195AB8D1 /* Pods_RSKGrowingTextViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSKGrowingTextViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2648B6332756FC24D0CD8128 /* Pods-RSKGrowingTextViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSKGrowingTextViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.release.xcconfig"; sourceTree = "<group>"; };
-		48E3C5834528672165C6E633 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSKGrowingTextViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.debug.xcconfig"; sourceTree = "<group>"; };
+		5C7246D988AE472318BBA3B0 /* Pods_RSKGrowingTextViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSKGrowingTextViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97525C150BABC3CEF9A5DB78 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSKGrowingTextViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		B811FDED1C1F31C3006CB9D6 /* RSKGrowingTextViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSKGrowingTextViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B811FDF01C1F31C3006CB9D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B811FDF21C1F31C3006CB9D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		B811FE131C1F33BE006CB9D6 /* RSKGrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSKGrowingTextView.swift; sourceTree = "<group>"; };
 		B89639061C3A508200270ECF /* RSKGrowingTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSKGrowingTextView.h; sourceTree = "<group>"; };
 		B89639071C3A50D600270ECF /* RSKGrowingTextViewExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSKGrowingTextViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9145BD5E02C9B4628712558 /* Pods-RSKGrowingTextViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSKGrowingTextViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBBBE96936DFE64A9B1E10E9 /* Pods_RSKGrowingTextViewExample.framework in Frameworks */,
+				F015AA2B49608224C0C20AC7 /* Pods_RSKGrowingTextViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,19 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2FC5EBDEA5F220A5F80E81B1 /* Frameworks */ = {
+		444D2B455C44D228EC09C2B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1BAEBFB07B8E5E2B195AB8D1 /* Pods_RSKGrowingTextViewExample.framework */,
+				5C7246D988AE472318BBA3B0 /* Pods_RSKGrowingTextViewExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C6E4F4811C476C4321E8043 /* Pods */ = {
+		5511CC7DEB249F2DADFE2086 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				48E3C5834528672165C6E633 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */,
-				2648B6332756FC24D0CD8128 /* Pods-RSKGrowingTextViewExample.release.xcconfig */,
+				97525C150BABC3CEF9A5DB78 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */,
+				B9145BD5E02C9B4628712558 /* Pods-RSKGrowingTextViewExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -89,8 +89,8 @@
 				B811FE041C1F31C4006CB9D6 /* RSKGrowingTextViewExampleUITests */,
 				B811FE111C1F33A6006CB9D6 /* Vendor */,
 				B811FDEE1C1F31C3006CB9D6 /* Products */,
-				5C6E4F4811C476C4321E8043 /* Pods */,
-				2FC5EBDEA5F220A5F80E81B1 /* Frameworks */,
+				5511CC7DEB249F2DADFE2086 /* Pods */,
+				444D2B455C44D228EC09C2B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,12 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B811FE0A1C1F31C4006CB9D6 /* Build configuration list for PBXNativeTarget "RSKGrowingTextViewExample" */;
 			buildPhases = (
-				3462999850D755F6A3401393 /* 📦 Check Pods Manifest.lock */,
+				2AB9C5626F071FECF63C0CD3 /* [CP] Check Pods Manifest.lock */,
 				B811FDE91C1F31C3006CB9D6 /* Sources */,
 				B811FDEA1C1F31C3006CB9D6 /* Frameworks */,
 				B811FDEB1C1F31C3006CB9D6 /* Resources */,
-				5B511F2915D467D482D8DD54 /* 📦 Embed Pods Frameworks */,
-				866343E76BCD98133BD3B811 /* 📦 Copy Pods Resources */,
+				49BF20FD831FA35180C536D4 /* [CP] Embed Pods Frameworks */,
+				18600836B8B79253A49885F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,14 +192,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Ruslan Skorb";
 				TargetAttributes = {
 					B811FDEC1C1F31C3006CB9D6 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J3P7YV7464;
+						LastSwiftMigration = 0800;
 					};
 					B811FE001C1F31C3006CB9D6 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J3P7YV7464;
+						LastSwiftMigration = 0800;
 						TestTargetID = B811FDEC1C1F31C3006CB9D6;
 					};
 				};
@@ -244,49 +248,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3462999850D755F6A3401393 /* 📦 Check Pods Manifest.lock */ = {
+		18600836B8B79253A49885F6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5B511F2915D467D482D8DD54 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		866343E76BCD98133BD3B811 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AB9C5626F071FECF63C0CD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		49BF20FD831FA35180C536D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -353,8 +357,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -397,8 +403,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -417,43 +425,52 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		B811FE0B1C1F31C4006CB9D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48E3C5834528672165C6E633 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */;
+			baseConfigurationReference = 97525C150BABC3CEF9A5DB78 /* Pods-RSKGrowingTextViewExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J3P7YV7464;
 				INFOPLIST_FILE = RSKGrowingTextViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		B811FE0C1C1F31C4006CB9D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2648B6332756FC24D0CD8128 /* Pods-RSKGrowingTextViewExample.release.xcconfig */;
+			baseConfigurationReference = B9145BD5E02C9B4628712558 /* Pods-RSKGrowingTextViewExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J3P7YV7464;
 				INFOPLIST_FILE = RSKGrowingTextViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		B811FE0E1C1F31C4006CB9D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = J3P7YV7464;
 				INFOPLIST_FILE = RSKGrowingTextViewExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = RSKGrowingTextViewExample;
 				USES_XCTRUNNER = YES;
 			};
@@ -462,10 +479,12 @@
 		B811FE0F1C1F31C4006CB9D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = J3P7YV7464;
 				INFOPLIST_FILE = RSKGrowingTextViewExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = RSKGrowingTextViewExample;
 				USES_XCTRUNNER = YES;
 			};
