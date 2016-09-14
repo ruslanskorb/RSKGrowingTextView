@@ -56,7 +56,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         
         calculationLayoutManager.ensureLayout(for: calculationTextContainer)
         
-        var height = calculationLayoutManager.usedRectForTextContainer(calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+        var height = calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
         if height < minHeight {
             height = minHeight
         } else if height > maxHeight {
@@ -137,7 +137,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             guard window != nil && !oldValue.equalTo(contentSize) else {
                 return
             }
-            if isFirstResponder() {
+            if isFirstResponder {
                 refreshHeightIfNeededAnimated(animateHeightChange)
             } else {
                 refreshHeightIfNeededAnimated(false)
@@ -159,7 +159,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     // MARK: - Layout
     
-    override open func intrinsicContentSize() -> CGSize {
+    override open var intrinsicContentSize: CGSize {
         if heightConstraint != nil {
             return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
         } else {
@@ -175,7 +175,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         showsVerticalScrollIndicator = false
         
         for constraint in constraints {
-            if constraint.firstAttribute == .Height && constraint.relation == .Equal {
+            if constraint.firstAttribute == .height && constraint.relation == .equal {
                 heightConstraint = constraint
                 break
             }
@@ -205,26 +205,26 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             }
             typealias HeightChangeCompletionBlockType = ((_ oldHeight: CGFloat, _ newHeight: CGFloat) -> Void)
             let heightChangeCompletionBlock: HeightChangeCompletionBlockType = { (oldHeight: CGFloat, newHeight: CGFloat) -> Void in
-                self.layoutManager.ensureLayoutForTextContainer(self.textContainer)
+                self.layoutManager.ensureLayout(for: self.textContainer)
                 self.scrollToVisibleCaretIfNeeded()
                 self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
             }
             growingTextViewDelegate?.growingTextView?(self, willChangeHeightFrom: oldHeight, to: newHeight)
             if animated {
-                UIView.animateWithDuration(
-                    heightChangeAnimationDuration,
+                UIView.animate(
+                    withDuration: heightChangeAnimationDuration,
                     delay: 0.0,
-                    options: [.AllowUserInteraction, .BeginFromCurrentState],
+                    options: [.allowUserInteraction, .beginFromCurrentState],
                     animations: { () -> Void in
-                        heightChangeSetHeightBlock(oldHeight: oldHeight, newHeight: newHeight)
+                        heightChangeSetHeightBlock(oldHeight, newHeight)
                     },
                     completion: { (finished: Bool) -> Void in
-                        heightChangeCompletionBlock(oldHeight: oldHeight, newHeight: newHeight)
+                        heightChangeCompletionBlock(oldHeight, newHeight)
                     }
                 )
             } else {
-                heightChangeSetHeightBlock(oldHeight: oldHeight, newHeight: newHeight)
-                heightChangeCompletionBlock(oldHeight: oldHeight, newHeight: newHeight)
+                heightChangeSetHeightBlock(oldHeight, newHeight)
+                heightChangeCompletionBlock(oldHeight, newHeight)
             }
         } else {
             scrollToVisibleCaretIfNeeded()
@@ -253,8 +253,8 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             return
         }
         
-        if textStorage.editedRange.location == NSNotFound && !dragging && !decelerating {
-            let caretRect = caretRectForPosition(textPosition)
+        if textStorage.editedRange.location == NSNotFound && !isDragging && !isDecelerating {
+            let caretRect = self.caretRect(for: textPosition)
             let caretCenterRect = CGRect(x: caretRect.midX, y: caretRect.midY, width: 0.0, height: 0.0)
             scrollRectToVisibleConsideringInsets(caretCenterRect)
         }
