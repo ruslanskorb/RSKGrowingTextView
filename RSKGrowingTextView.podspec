@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'RSKGrowingTextView'
-  s.version      = '1.1.1'
+  s.version      = '1.2.0'
   s.summary      = 'A light-weight UITextView subclass that automatically grows and shrinks.'
   s.description  = <<-DESC
                    A light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.source_files = 'RSKGrowingTextView/*.{h,swift}'
   s.requires_arc = true
-  s.dependency 'RSKPlaceholderTextView', '1.1.1'
+  s.dependency 'RSKPlaceholderTextView', '1.2.0'
 end
