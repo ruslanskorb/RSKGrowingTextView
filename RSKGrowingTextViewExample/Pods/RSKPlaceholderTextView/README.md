@@ -30,6 +30,27 @@ A light-weight UITextView subclass that adds support for placeholder.
 
 2.  Run `carthage update`, then follow the [additional steps required](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the iOS and/or Mac frameworks into your project.
 
+## Basic Usage
+
+Import the module.
+
+```swift
+import RSKPlaceholderTextView
+```
+
+Just create a text view and set the placeholder.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.textView = RSKPlaceholderTextView(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 100))
+    self.textView.placeholder = "What do you want to say about this event?"
+
+    self.view.addSubview(self.textView)
+}
+```
+
 ## Demo
 
 Build and run the `RSKPlaceholderTextViewExample` project in Xcode to see `RSKPlaceholderTextView` in action.

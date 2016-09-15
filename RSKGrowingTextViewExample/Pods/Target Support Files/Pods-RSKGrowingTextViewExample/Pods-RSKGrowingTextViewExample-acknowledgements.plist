@@ -35,6 +35,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>RSKKeyboardAnimationObserver</string>
 			<key>Type</key>
@@ -245,6 +247,8 @@ THE SOFTWARE.
    limitations under the License.
 
 </string>
+			<key>License</key>
+			<string>Apache</string>
 			<key>Title</key>
 			<string>RSKPlaceholderTextView</string>
 			<key>Type</key>
