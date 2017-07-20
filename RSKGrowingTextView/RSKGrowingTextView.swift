@@ -48,6 +48,11 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Private Properties
     
     fileprivate var calculatedHeight: CGFloat {
+        let calculationLayoutManager = NSLayoutManager()
+        let calculationTextContainer = NSTextContainer()
+        
+        calculationLayoutManager.addTextContainer(calculationTextContainer)
+        
         let calculationTextStorage = NSTextStorage(attributedString: attributedText)
         calculationTextStorage.addLayoutManager(calculationLayoutManager)
         
@@ -66,9 +71,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         return height
     }
     
-    fileprivate let calculationLayoutManager = NSLayoutManager()
     
-    fileprivate let calculationTextContainer = NSTextContainer()
     
     fileprivate weak var heightConstraint: NSLayoutConstraint?
     
@@ -180,8 +183,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 break
             }
         }
-        
-        calculationLayoutManager.addTextContainer(calculationTextContainer)
     }
     
     fileprivate func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
