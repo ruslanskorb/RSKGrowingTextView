@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     private func unregisterForKeyboardNotifications() {
-        self.unregisterForKeyboardNotifications()
+        self.rsk_unsubscribeKeyboard()
     }
 }
 
