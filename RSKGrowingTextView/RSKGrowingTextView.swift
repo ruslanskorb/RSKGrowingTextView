@@ -47,7 +47,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     // MARK: - Private Properties
     
-    fileprivate var calculatedHeight: CGFloat {
+    private var calculatedHeight: CGFloat {
         let calculationTextStorage = NSTextStorage(attributedString: attributedText)
         calculationTextStorage.addLayoutManager(calculationLayoutManager)
         
@@ -66,17 +66,17 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         return height
     }
     
-    fileprivate let calculationLayoutManager = NSLayoutManager()
+    private let calculationLayoutManager = NSLayoutManager()
     
-    fileprivate let calculationTextContainer = NSTextContainer()
+    private let calculationTextContainer = NSTextContainer()
     
-    fileprivate weak var heightConstraint: NSLayoutConstraint?
+    private weak var heightConstraint: NSLayoutConstraint?
     
-    fileprivate var maxHeight: CGFloat { return heightForNumberOfLines(maximumNumberOfLines) }
+    private var maxHeight: CGFloat { return heightForNumberOfLines(maximumNumberOfLines) }
     
-    fileprivate var minHeight: CGFloat { return heightForNumberOfLines(minimumNumberOfLines) }
+    private var minHeight: CGFloat { return heightForNumberOfLines(minimumNumberOfLines) }
     
-    // MARK: - Public Properties
+    // MARK: - Open Properties
     
     /// A Boolean value that determines whether the animation of the height change is enabled. Default value is `true`.
     @IBInspectable open var animateHeightChange: Bool = true
@@ -157,8 +157,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         commonInitializer()
     }
     
-    // MARK: - Layout
-    
     override open var intrinsicContentSize: CGSize {
         if heightConstraint != nil {
             return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
@@ -167,9 +165,9 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
-    // MARK: - Helper Methods
+    // MARK: - Private API
     
-    fileprivate func commonInitializer() {
+    private func commonInitializer() {
         contentInset = UIEdgeInsetsMake(1.0, 0.0, 1.0, 0.0)
         scrollsToTop = false
         showsVerticalScrollIndicator = false
@@ -184,7 +182,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         calculationLayoutManager.addTextContainer(calculationTextContainer)
     }
     
-    fileprivate func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
+    private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
         var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
         if let font = self.font {
             height += font.lineHeight * CGFloat(numberOfLines)
@@ -192,7 +190,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         return ceil(height)
     }
     
-    fileprivate func refreshHeightIfNeededAnimated(_ animated: Bool) {
+    private func refreshHeightIfNeededAnimated(_ animated: Bool) {
         let oldHeight = bounds.height
         let newHeight = calculatedHeight
         
@@ -231,7 +229,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
-    fileprivate func scrollRectToVisibleConsideringInsets(_ rect: CGRect) {
+    private func scrollRectToVisibleConsideringInsets(_ rect: CGRect) {
         let insets = UIEdgeInsetsMake(contentInset.top + textContainerInset.top, contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, contentInset.bottom + textContainerInset.bottom, contentInset.right + textContainerInset.right)
         let visibleRect = UIEdgeInsetsInsetRect(bounds, insets)
         
@@ -248,7 +246,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         setContentOffset(contentOffset, animated: false)
     }
     
-    fileprivate func scrollToVisibleCaretIfNeeded() {
+    private func scrollToVisibleCaretIfNeeded() {
         guard let textPosition = selectedTextRange?.end else {
             return
         }
@@ -260,7 +258,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
-    fileprivate func setHeight(_ height: CGFloat) {
+    private func setHeight(_ height: CGFloat) {
         if let heightConstraint = self.heightConstraint {
             heightConstraint.constant = height
         } else if !constraints.isEmpty {
