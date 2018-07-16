@@ -156,7 +156,6 @@
 				B811FDEA1C1F31C3006CB9D6 /* Frameworks */,
 				B811FDEB1C1F31C3006CB9D6 /* Resources */,
 				49BF20FD831FA35180C536D4 /* [CP] Embed Pods Frameworks */,
-				18600836B8B79253A49885F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,21 +247,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18600836B8B79253A49885F6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSKGrowingTextViewExample/Pods-RSKGrowingTextViewExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2AB9C5626F071FECF63C0CD3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

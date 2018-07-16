@@ -1,15 +1,20 @@
 PODS:
   - RSKKeyboardAnimationObserver (1.0.0)
-  - RSKPlaceholderTextView (3.0.0)
+  - RSKPlaceholderTextView (3.0.2)
 
 DEPENDENCIES:
   - RSKKeyboardAnimationObserver (= 1.0.0)
-  - RSKPlaceholderTextView (= 3.0.0)
+  - RSKPlaceholderTextView (= 3.0.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RSKKeyboardAnimationObserver
+    - RSKPlaceholderTextView
 
 SPEC CHECKSUMS:
   RSKKeyboardAnimationObserver: 0bdbc5235a96ce6d1e6143998214160c7f7c9b37
-  RSKPlaceholderTextView: 0ce73a19998e236323b3f1f16bf4a4e4a76c2c28
+  RSKPlaceholderTextView: 58983d38f9dc44a309d5615f5d63680f4a2c22a1
 
-PODFILE CHECKSUM: e9680a5ea68720a0288916fc5f14cab8b48a8cc0
+PODFILE CHECKSUM: f53f9f2a116aa406ec9ecd06e3ffa3163a4dda35
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
