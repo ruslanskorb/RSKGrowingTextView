@@ -210,12 +210,26 @@ import UIKit
         
         let placeholderUsedRect = self.placeholderLayoutManager.usedRect(for: self.placeholderTextContainer)
         
-        if UIApplication.shared.userInterfaceLayoutDirection == .leftToRight {
+        let userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection
+        if #available(iOS 10.0, *) {
             
-            caretRect.origin.x = placeholderUsedRect.minX + self.placeholderInsets.left
+            userInterfaceLayoutDirection = self.effectiveUserInterfaceLayoutDirection
+        }
+        else if #available(iOS 9.0, *) {
+            
+            userInterfaceLayoutDirection = UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute)
         }
         else {
             
+            userInterfaceLayoutDirection = UIApplication.shared.userInterfaceLayoutDirection
+        }
+        
+        switch userInterfaceLayoutDirection {
+            
+        case .leftToRight:
+            caretRect.origin.x = placeholderUsedRect.minX + self.placeholderInsets.left
+            
+        case .rightToLeft:
             caretRect.origin.x = placeholderUsedRect.maxX - self.placeholderInsets.left
         }
         
