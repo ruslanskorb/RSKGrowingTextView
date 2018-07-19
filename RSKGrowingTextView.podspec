@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.source_files = 'RSKGrowingTextView/*.{h,swift}'
   s.requires_arc = true
-  s.dependency 'RSKPlaceholderTextView', '3.0.2'
+  s.dependency 'RSKPlaceholderTextView', '3.1.0'
 end
