@@ -21,38 +21,24 @@ import UIKit
     
     // MARK: - Private Properties
     
-    private var placeholderAttributes: [NSAttributedStringKey: Any] {
+    private var placeholderAttributes: [NSAttributedString.Key: Any] {
         
-        var placeholderAttributes = [NSAttributedStringKey: Any]()
+        var placeholderAttributes = self.typingAttributes
         
-        self.typingAttributes.forEach { (key, value) in
+        if placeholderAttributes[.font] == nil {
             
-            let attributedStringKey = NSAttributedStringKey(key)
-            placeholderAttributes[attributedStringKey] = value
+            placeholderAttributes[.font] = self.typingAttributes[.font] ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
         }
         
-        if placeholderAttributes[NSAttributedStringKey.font] == nil {
+        if placeholderAttributes[.paragraphStyle] == nil {
             
-            placeholderAttributes[NSAttributedStringKey.font] = self.typingAttributes[NSAttributedStringKey.font.rawValue] ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = self.textAlignment
+            paragraphStyle.lineBreakMode = self.textContainer.lineBreakMode
+            placeholderAttributes[.paragraphStyle] = paragraphStyle
         }
         
-        if placeholderAttributes[NSAttributedStringKey.paragraphStyle] == nil {
-            
-            let typingParagraphStyle = self.typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue]
-            if typingParagraphStyle == nil {
-                
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.alignment = self.textAlignment
-                paragraphStyle.lineBreakMode = self.textContainer.lineBreakMode
-                placeholderAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
-            }
-            else {
-                
-                placeholderAttributes[NSAttributedStringKey.paragraphStyle] = typingParagraphStyle
-            }
-        }
-        
-        placeholderAttributes[NSAttributedStringKey.foregroundColor] = self.placeholderColor
+        placeholderAttributes[.foregroundColor] = self.placeholderColor
         
         return placeholderAttributes
     }
@@ -152,7 +138,7 @@ import UIKit
     
     open override var textContainerInset: UIEdgeInsets { didSet { self.setNeedsDisplay() } }
     
-    open override var typingAttributes: [String : Any] {
+    open override var typingAttributes: [NSAttributedString.Key: Any] {
         
         didSet {
             
@@ -167,7 +153,7 @@ import UIKit
     
     deinit {
         
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -250,7 +236,7 @@ import UIKit
             return
         }
         
-        let placeholderRect = UIEdgeInsetsInsetRect(rect, self.placeholderInsets)
+        let placeholderRect = rect.inset(by: self.placeholderInsets)
         attributedPlaceholder.draw(in: placeholderRect)
     }
     
@@ -260,7 +246,7 @@ import UIKit
         
         self.contentMode = .topLeft
         
-        NotificationCenter.default.addObserver(self, selector: #selector(RSKPlaceholderTextView.handleTextViewTextDidChangeNotification(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(RSKPlaceholderTextView.handleTextViewTextDidChangeNotification(_:)), name: UITextView.textDidChangeNotification, object: self)
     }
     
     @objc internal func handleTextViewTextDidChangeNotification(_ notification: Notification) {
