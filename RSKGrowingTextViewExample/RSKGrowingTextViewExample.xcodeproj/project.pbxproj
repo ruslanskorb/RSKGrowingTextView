@@ -446,8 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -463,8 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

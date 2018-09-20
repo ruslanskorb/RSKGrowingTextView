@@ -159,16 +159,16 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     override open var intrinsicContentSize: CGSize {
         if heightConstraint != nil {
-            return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
+            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
         } else {
-            return CGSize(width: UIViewNoIntrinsicMetric, height: calculatedHeight)
+            return CGSize(width: UIView.noIntrinsicMetric, height: calculatedHeight)
         }
     }
     
     // MARK: - Private API
     
     private func commonInitializer() {
-        contentInset = UIEdgeInsetsMake(1.0, 0.0, 1.0, 0.0)
+        contentInset = UIEdgeInsets(top: 1.0, left: 0.0, bottom: 1.0, right: 0.0)
         scrollsToTop = false
         showsVerticalScrollIndicator = false
         
@@ -230,8 +230,8 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func scrollRectToVisibleConsideringInsets(_ rect: CGRect) {
-        let insets = UIEdgeInsetsMake(contentInset.top + textContainerInset.top, contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, contentInset.bottom + textContainerInset.bottom, contentInset.right + textContainerInset.right)
-        let visibleRect = UIEdgeInsetsInsetRect(bounds, insets)
+        let insets = UIEdgeInsets(top: contentInset.top + textContainerInset.top, left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, bottom: contentInset.bottom + textContainerInset.bottom, right: contentInset.right + textContainerInset.right)
+        let visibleRect = bounds.inset(by: insets)
         
         guard !visibleRect.contains(rect) else {
             return
