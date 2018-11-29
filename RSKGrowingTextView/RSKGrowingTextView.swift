@@ -56,7 +56,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         
         calculationLayoutManager.ensureLayout(for: calculationTextContainer)
         
-        var height = calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+        var height = ceil(calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom)
         if height < minHeight {
             height = minHeight
         } else if height > maxHeight {
