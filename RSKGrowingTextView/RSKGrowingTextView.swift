@@ -134,10 +134,10 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     override open var contentSize: CGSize {
         didSet {
-            guard window != nil && !oldValue.equalTo(contentSize) else {
+            guard !oldValue.equalTo(contentSize) else {
                 return
             }
-            if isFirstResponder {
+            if window != nil && isFirstResponder {
                 refreshHeightIfNeededAnimated(animateHeightChange)
             } else {
                 refreshHeightIfNeededAnimated(false)
@@ -148,11 +148,13 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Object Lifecycle
     
     required public init?(coder aDecoder: NSCoder) {
+        calculationLayoutManager.addTextContainer(calculationTextContainer)
         super.init(coder: aDecoder)
         commonInitializer()
     }
     
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
+        calculationLayoutManager.addTextContainer(calculationTextContainer)
         super.init(frame: frame, textContainer: textContainer)
         commonInitializer()
     }
@@ -178,8 +180,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 break
             }
         }
-        
-        calculationLayoutManager.addTextContainer(calculationTextContainer)
     }
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
