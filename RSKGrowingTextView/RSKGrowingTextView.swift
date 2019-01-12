@@ -112,16 +112,22 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
-    /// The current displayed number of lines. This value is calculated based on the height of text lines.
+    /// The current displayed number of lines. This value is calculated at run time.
     open var numberOfLines: Int {
-        guard let font = self.font else {
-            return 0
+        var numberOfLines = 0
+        var index = 0
+        var lineRange = NSRange()
+        let numberOfGlyphs = layoutManager.numberOfGlyphs
+        while index < numberOfGlyphs {
+            if #available(iOS 9.0, *) {
+                _ = layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange, withoutAdditionalLayout: true)
+            } else {
+                _ = layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+            }
+            index = NSMaxRange(lineRange)
+            numberOfLines += 1
         }
-        
-        let textRectHeight = contentSize.height - contentInset.top - contentInset.bottom - textContainerInset.top - textContainerInset.bottom
-        let numberOfLines = textRectHeight / font.lineHeight
-        
-        return lround(Double(numberOfLines))
+        return numberOfLines
     }
     
     // MARK: - Superclass Properties
