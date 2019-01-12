@@ -211,7 +211,20 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 height += calculationLayoutManager.lineFragmentRect(forGlyphAt: 0, effectiveRange: &lineRange).maxY * CGFloat(numberOfLines)
             }
         } else {
-            height += calculationLayoutManager.usedRect(for: calculationTextContainer).height
+            let font = (self.typingAttributes[.font] as? UIFont) ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+            var lineHeight = font.lineHeight
+            if let paragraphStyle = self.typingAttributes[.paragraphStyle] as? NSParagraphStyle {
+                if paragraphStyle.lineHeightMultiple > 0.0 {
+                    lineHeight *= paragraphStyle.lineHeightMultiple
+                }
+                if paragraphStyle.minimumLineHeight > 0.0, lineHeight < paragraphStyle.minimumLineHeight {
+                    lineHeight = paragraphStyle.minimumLineHeight
+                } else if paragraphStyle.maximumLineHeight > 0.0, lineHeight > paragraphStyle.maximumLineHeight {
+                    lineHeight = paragraphStyle.maximumLineHeight
+                }
+                lineHeight += paragraphStyle.lineSpacing
+            }
+            height += lineHeight * CGFloat(numberOfLines)
         }
         return ceil(height)
     }
