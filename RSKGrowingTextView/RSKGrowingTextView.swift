@@ -48,7 +48,14 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Private Properties
     
     private var calculatedHeight: CGFloat {
-        let calculationTextStorage = NSTextStorage(attributedString: attributedText)
+        let calculationTextStorage: NSTextStorage
+        if let attributedText = attributedText, attributedText.length > 0 {
+            calculationTextStorage = NSTextStorage(attributedString: attributedText)
+        } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
+            calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
+        } else {
+            calculationTextStorage = NSTextStorage(attributedString: NSAttributedString())
+        }
         calculationTextStorage.addLayoutManager(calculationLayoutManager)
         
         calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
