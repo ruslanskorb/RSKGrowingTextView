@@ -197,8 +197,15 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
         var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
-        if let font = self.font {
-            height += font.lineHeight * CGFloat(numberOfLines)
+        if calculationLayoutManager.numberOfGlyphs > 0 {
+            var lineRange = NSRange()
+            if #available(iOS 9.0, *) {
+                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: 0, effectiveRange: &lineRange, withoutAdditionalLayout: true).maxY * CGFloat(numberOfLines)
+            } else {
+                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: 0, effectiveRange: &lineRange).maxY * CGFloat(numberOfLines)
+            }
+        } else {
+            height += calculationLayoutManager.usedRect(for: calculationTextContainer).height
         }
         return ceil(height)
     }
