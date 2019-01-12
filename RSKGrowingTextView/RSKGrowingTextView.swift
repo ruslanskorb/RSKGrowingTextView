@@ -48,28 +48,34 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Private Properties
     
     private var calculatedHeight: CGFloat {
-        let calculationTextStorage: NSTextStorage
+        let calculationTextStorage: NSTextStorage?
         if let attributedText = attributedText, attributedText.length > 0 {
             calculationTextStorage = NSTextStorage(attributedString: attributedText)
         } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
             calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
         } else {
-            calculationTextStorage = NSTextStorage(attributedString: NSAttributedString())
+            calculationTextStorage = nil
         }
-        calculationTextStorage.addLayoutManager(calculationLayoutManager)
-        
-        calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
-        calculationTextContainer.size = textContainer.size
-        
-        calculationLayoutManager.ensureLayout(for: calculationTextContainer)
-        
-        var height = ceil(calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom)
-        if height < minHeight {
+        var height: CGFloat
+        if let _calculationTextStorage = calculationTextStorage {
+            
+            _calculationTextStorage.addLayoutManager(calculationLayoutManager)
+            
+            calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
+            calculationTextContainer.size = textContainer.size
+            
+            calculationLayoutManager.ensureLayout(for: calculationTextContainer)
+            
+            height = ceil(calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom)
+            
+            if height < minHeight {
+                height = minHeight
+            } else if height > maxHeight {
+                height = maxHeight
+            }
+        } else {
             height = minHeight
-        } else if height > maxHeight {
-            height = maxHeight
         }
-        
         return height
     }
     
