@@ -203,14 +203,23 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
         var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
-        if calculationLayoutManager.numberOfGlyphs > 0 {
+        
+        var numberOfNonEmptyLines = 0
+        var index = 0
+        let numberOfGlyphs = calculationLayoutManager.numberOfGlyphs
+        while index < numberOfGlyphs && numberOfNonEmptyLines < numberOfLines {
             var lineRange = NSRange()
             if #available(iOS 9.0, *) {
-                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: 0, effectiveRange: &lineRange, withoutAdditionalLayout: true).maxY * CGFloat(numberOfLines)
+                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange, withoutAdditionalLayout: true).height
             } else {
-                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: 0, effectiveRange: &lineRange).maxY * CGFloat(numberOfLines)
+                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange).height
             }
-        } else {
+            index = NSMaxRange(lineRange)
+            numberOfNonEmptyLines += 1
+        }
+        
+        let numberOfEmptyLines = (numberOfLines - numberOfNonEmptyLines)
+        if numberOfEmptyLines > 0 {
             let font = (self.typingAttributes[.font] as? UIFont) ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
             var lineHeight = font.lineHeight
             if let paragraphStyle = self.typingAttributes[.paragraphStyle] as? NSParagraphStyle {
@@ -224,8 +233,9 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 }
                 lineHeight += paragraphStyle.lineSpacing
             }
-            height += lineHeight * CGFloat(numberOfLines)
+            height += lineHeight * CGFloat(numberOfEmptyLines)
         }
+        
         return ceil(height)
     }
     
