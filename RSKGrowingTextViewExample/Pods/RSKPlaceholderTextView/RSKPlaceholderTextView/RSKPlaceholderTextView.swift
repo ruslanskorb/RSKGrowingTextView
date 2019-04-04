@@ -201,22 +201,21 @@ import UIKit
             
             userInterfaceLayoutDirection = self.effectiveUserInterfaceLayoutDirection
         }
-        else if #available(iOS 9.0, *) {
-            
-            userInterfaceLayoutDirection = UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute)
-        }
         else {
             
-            userInterfaceLayoutDirection = UIApplication.shared.userInterfaceLayoutDirection
+            userInterfaceLayoutDirection = UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute)
         }
         
         switch userInterfaceLayoutDirection {
             
-        case .leftToRight:
-            caretRect.origin.x = placeholderUsedRect.minX + self.placeholderInsets.left
-            
         case .rightToLeft:
             caretRect.origin.x = placeholderUsedRect.maxX - self.placeholderInsets.left
+            
+        case .leftToRight:
+            fallthrough
+            
+        @unknown default:
+            caretRect.origin.x = placeholderUsedRect.minX + self.placeholderInsets.left
         }
         
         return caretRect
