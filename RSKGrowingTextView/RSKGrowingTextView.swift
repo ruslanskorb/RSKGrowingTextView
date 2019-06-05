@@ -62,7 +62,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             _calculationTextStorage.addLayoutManager(calculationLayoutManager)
             
             calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
-            calculationTextContainer.size = textContainer.size
+            calculationTextContainer.size = CGSize(width: textContainer.size.width, height: 0.0) 
             
             calculationLayoutManager.ensureLayout(for: calculationTextContainer)
             
