@@ -36,8 +36,7 @@ class ViewController: UIViewController {
     
     private func adjustContent(for keyboardRect: CGRect) {
         let keyboardHeight = keyboardRect.height
-        let keyboardYPosition = self.isVisibleKeyboard ? keyboardHeight : 0.0;
-        self.bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint.constant = keyboardYPosition
+        self.bottomLayoutGuideTopAndGrowingTextViewBottomVeticalSpaceConstraint.constant = self.isVisibleKeyboard ? keyboardHeight - self.bottomLayoutGuide.length : 0.0
         self.view.layoutIfNeeded()
     }
     
