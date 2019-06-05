@@ -125,6 +125,19 @@ import UIKit
         }
     }
     
+    open override var intrinsicContentSize: CGSize {
+        
+        guard self.text.isEmpty == true,
+            let attributedPlaceholder = self.attributedPlaceholder,
+            attributedPlaceholder.length > 0 else {
+                
+                return super.intrinsicContentSize
+        }
+        
+        let placeholderInsets = self.placeholderInsets
+        return CGSize(width: UIView.noIntrinsicMetric, height: self.placeholderUsedRect(for: attributedPlaceholder).height + placeholderInsets.top + placeholderInsets.bottom)
+    }
+    
     open override var textAlignment: NSTextAlignment {
         
         didSet {
@@ -174,27 +187,16 @@ import UIKit
     
     open override func caretRect(for position: UITextPosition) -> CGRect {
         
-        guard self.text.isEmpty == true, let attributedPlaceholder = self.attributedPlaceholder else {
+        guard self.text.isEmpty == true,
+            let attributedPlaceholder = self.attributedPlaceholder,
+            attributedPlaceholder.length > 0 else {
             
             return super.caretRect(for: position)
         }
         
-        if self.placeholderTextContainer.layoutManager == nil {
-            
-            self.placeholderLayoutManager.addTextContainer(self.placeholderTextContainer)
-        }
-        
-        let placeholderTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
-        placeholderTextStorage.addLayoutManager(self.placeholderLayoutManager)
-        
-        self.placeholderTextContainer.lineFragmentPadding = self.textContainer.lineFragmentPadding
-        self.placeholderTextContainer.size = self.textContainer.size
-        
-        self.placeholderLayoutManager.ensureLayout(for: self.placeholderTextContainer)
-        
         var caretRect = super.caretRect(for: position)
         
-        let placeholderUsedRect = self.placeholderLayoutManager.usedRect(for: self.placeholderTextContainer)
+        let placeholderUsedRect = self.placeholderUsedRect(for: attributedPlaceholder)
         
         let userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection
         if #available(iOS 10.0, *) {
@@ -255,5 +257,23 @@ import UIKit
             return
         }
         self.setNeedsDisplay()
+    }
+    
+    private func placeholderUsedRect(for attributedPlaceholder: NSAttributedString) -> CGRect {
+        
+        if self.placeholderTextContainer.layoutManager == nil {
+            
+            self.placeholderLayoutManager.addTextContainer(self.placeholderTextContainer)
+        }
+        
+        let placeholderTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
+        placeholderTextStorage.addLayoutManager(self.placeholderLayoutManager)
+        
+        self.placeholderTextContainer.lineFragmentPadding = self.textContainer.lineFragmentPadding
+        self.placeholderTextContainer.size = CGSize(width: self.textContainer.size.width, height: 0.0)
+        
+        self.placeholderLayoutManager.ensureLayout(for: self.placeholderTextContainer)
+        
+        return self.placeholderLayoutManager.usedRect(for: self.placeholderTextContainer)
     }
 }
