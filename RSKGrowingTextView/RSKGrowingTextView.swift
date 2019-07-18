@@ -164,6 +164,14 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
+    override open var intrinsicContentSize: CGSize {
+        if heightConstraint != nil {
+            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
+        } else {
+            return CGSize(width: UIView.noIntrinsicMetric, height: calculatedHeight)
+        }
+    }
+    
     // MARK: - Object Lifecycle
     
     required public init?(coder aDecoder: NSCoder) {
@@ -176,14 +184,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         calculationLayoutManager.addTextContainer(calculationTextContainer)
         super.init(frame: frame, textContainer: textContainer)
         commonInitializer()
-    }
-    
-    override open var intrinsicContentSize: CGSize {
-        if heightConstraint != nil {
-            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
-        } else {
-            return CGSize(width: UIView.noIntrinsicMetric, height: calculatedHeight)
-        }
     }
     
     // MARK: - Private API
