@@ -145,6 +145,12 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     // MARK: - Superclass Properties
     
+    open override var attributedPlaceholder: NSAttributedString? {
+        didSet {
+            refreshHeightIfNeededAnimated(false)
+        }
+    }
+
     override open var attributedText: NSAttributedString! {
         didSet {
             superview?.layoutIfNeeded()
