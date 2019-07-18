@@ -180,6 +180,11 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     // MARK: - Object Lifecycle
     
+    deinit {
+        
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         calculationLayoutManager.addTextContainer(calculationTextContainer)
         super.init(coder: aDecoder)
@@ -190,6 +195,13 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         calculationLayoutManager.addTextContainer(calculationTextContainer)
         super.init(frame: frame, textContainer: textContainer)
         commonInitializer()
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func handleRSKGrowingTextViewTextDidChangeNotification(_ notification: Notification) {
+        
+        refreshHeightIfNeededAnimated(animateHeightChange)
     }
     
     // MARK: - Private API
@@ -206,6 +218,8 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 break
             }
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(RSKGrowingTextView.handleRSKGrowingTextViewTextDidChangeNotification(_:)), name: UITextView.textDidChangeNotification, object: self)
     }
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
