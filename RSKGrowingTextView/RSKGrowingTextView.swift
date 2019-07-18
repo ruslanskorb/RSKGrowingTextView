@@ -196,6 +196,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         for constraint in constraints {
             if constraint.firstAttribute == .height && constraint.relation == .equal {
                 heightConstraint = constraint
+                heightConstraint?.constant = calculatedHeight
                 break
             }
         }
