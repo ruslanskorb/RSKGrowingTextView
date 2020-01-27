@@ -27,7 +27,7 @@ import UIKit
         
         if placeholderAttributes[.font] == nil {
             
-            placeholderAttributes[.font] = self.typingAttributes[.font] ?? self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+            placeholderAttributes[.font] = self.font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
         }
         
         if placeholderAttributes[.paragraphStyle] == nil {
@@ -63,6 +63,34 @@ import UIKit
         
         didSet {
             
+            guard self.attributedPlaceholder != oldValue else {
+                
+                return
+            }
+            if let attributedPlaceholder = self.attributedPlaceholder {
+                
+                let attributes = attributedPlaceholder.attributes(at: 0, effectiveRange: nil)
+                if let font = attributes[.font] as? UIFont,
+                    self.font != font {
+                    
+                    self.font = font
+                    self.typingAttributes[.font] = font
+                }
+                if let foregroundColor = attributes[.foregroundColor] as? UIColor,
+                    self.placeholderColor != foregroundColor {
+                    
+                    self.placeholderColor = foregroundColor
+                }
+                if let paragraphStyle = attributes[.paragraphStyle] as? NSParagraphStyle,
+                    self.textAlignment != paragraphStyle.alignment {
+                    
+                    let mutableParagraphStyle = NSMutableParagraphStyle()
+                    mutableParagraphStyle.setParagraphStyle(paragraphStyle)
+                    
+                    self.textAlignment = paragraphStyle.alignment
+                    self.typingAttributes[.paragraphStyle] = mutableParagraphStyle
+                }
+            }
             guard self.isEmpty == true else {
                 
                 return
