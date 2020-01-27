@@ -14,6 +14,7 @@
 // limitations under the License.
 //
 
+import RSKPlaceholderTextView
 import UIKit
 
 /// The type of the block which contains user defined actions that will run during the height change.
