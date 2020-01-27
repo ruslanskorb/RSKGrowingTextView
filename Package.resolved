@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RSKPlaceholderTextView",
+        "repositoryURL": "https://github.com/ruslanskorb/RSKPlaceholderTextView.git",
+        "state": {
+          "branch": null,
+          "revision": "387cca8f23437809977dad928cbfef9be005f486",
+          "version": "6.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
