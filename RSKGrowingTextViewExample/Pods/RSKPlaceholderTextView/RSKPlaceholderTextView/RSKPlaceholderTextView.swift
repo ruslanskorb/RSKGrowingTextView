@@ -46,9 +46,9 @@ import UIKit
     private var placeholderInsets: UIEdgeInsets {
         
         let placeholderInsets = UIEdgeInsets(top: self.contentInset.top + self.textContainerInset.top,
-                                             left: self.contentInset.left + self.textContainerInset.left + self.textContainer.lineFragmentPadding,
+                                             left: self.contentInset.left + self.textContainerInset.left,
                                              bottom: self.contentInset.bottom + self.textContainerInset.bottom,
-                                             right: self.contentInset.right + self.textContainerInset.right + self.textContainer.lineFragmentPadding)
+                                             right: self.contentInset.right + self.textContainerInset.right)
         return placeholderInsets
     }
     
@@ -223,16 +223,17 @@ import UIKit
             userInterfaceLayoutDirection = UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute)
         }
         
+        let placeholderInsets = self.placeholderInsets
         switch userInterfaceLayoutDirection {
             
         case .rightToLeft:
-            caretRect.origin.x = placeholderUsedRect.maxX - self.textContainer.lineFragmentPadding
+            caretRect.origin.x = placeholderInsets.left + placeholderUsedRect.maxX - self.textContainer.lineFragmentPadding
             
         case .leftToRight:
             fallthrough
             
         @unknown default:
-            caretRect.origin.x = placeholderUsedRect.minX + self.textContainer.lineFragmentPadding
+            caretRect.origin.x = placeholderInsets.left + placeholderUsedRect.minX + self.textContainer.lineFragmentPadding
         }
         
         return caretRect
@@ -252,7 +253,12 @@ import UIKit
             return
         }
         
-        let placeholderRect = rect.inset(by: self.placeholderInsets)
+        var inset = self.placeholderInsets
+        inset.left += self.textContainer.lineFragmentPadding
+        inset.right += self.textContainer.lineFragmentPadding
+        
+        let placeholderRect = rect.inset(by: inset)
+        
         attributedPlaceholder.draw(in: placeholderRect)
     }
     
