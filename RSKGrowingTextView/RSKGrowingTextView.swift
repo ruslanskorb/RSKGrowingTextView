@@ -96,7 +96,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     @IBInspectable open var animateHeightChange: Bool = true
     
     /// The receiver's delegate.
-    open weak var growingTextViewDelegate: RSKGrowingTextViewDelegate? { didSet { delegate = growingTextViewDelegate } }
+    @objc open weak var growingTextViewDelegate: RSKGrowingTextViewDelegate? { didSet { delegate = growingTextViewDelegate } }
     
     /// The duration of the animation of the height change. The default value is `0.35`.
     @IBInspectable open var heightChangeAnimationDuration: Double = 0.35
