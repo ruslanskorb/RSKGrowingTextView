@@ -211,7 +211,7 @@ import UIKit
         
         var caretRect = super.caretRect(for: position)
         
-        let placeholderUsedRect = self.placeholderUsedRect(for: attributedPlaceholder)
+        let placeholderLineFragmentUsedRect = self.placeholderLineFragmentUsedRectForGlyphAt0GlyphIndex(attributedPlaceholder: attributedPlaceholder)
         
         let userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection
         if #available(iOS 10.0, *) {
@@ -227,13 +227,13 @@ import UIKit
         switch userInterfaceLayoutDirection {
             
         case .rightToLeft:
-            caretRect.origin.x = placeholderInsets.left + placeholderUsedRect.maxX - self.textContainer.lineFragmentPadding
+            caretRect.origin.x = placeholderInsets.left + placeholderLineFragmentUsedRect.maxX - self.textContainer.lineFragmentPadding
             
         case .leftToRight:
             fallthrough
             
         @unknown default:
-            caretRect.origin.x = placeholderInsets.left + placeholderUsedRect.minX + self.textContainer.lineFragmentPadding
+            caretRect.origin.x = placeholderInsets.left + placeholderLineFragmentUsedRect.minX + self.textContainer.lineFragmentPadding
         }
         
         return caretRect
@@ -280,7 +280,7 @@ import UIKit
         self.setNeedsDisplay()
     }
     
-    private func placeholderUsedRect(for attributedPlaceholder: NSAttributedString) -> CGRect {
+    private func placeholderLineFragmentUsedRectForGlyphAt0GlyphIndex(attributedPlaceholder: NSAttributedString) -> CGRect {
         
         if self.placeholderTextContainer.layoutManager == nil {
             
@@ -295,6 +295,6 @@ import UIKit
         
         self.placeholderLayoutManager.ensureLayout(for: self.placeholderTextContainer)
         
-        return self.placeholderLayoutManager.usedRect(for: self.placeholderTextContainer)
+        return self.placeholderLayoutManager.lineFragmentUsedRect(forGlyphAt: 0, effectiveRange: nil)
     }
 }
