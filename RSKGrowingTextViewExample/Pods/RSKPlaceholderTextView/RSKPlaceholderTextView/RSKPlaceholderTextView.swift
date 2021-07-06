@@ -262,6 +262,62 @@ import UIKit
         attributedPlaceholder.draw(in: placeholderRect)
     }
     
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        
+        if self.isEmpty == true,
+           let attributedPlaceholder = self.attributedPlaceholder,
+           attributedPlaceholder.length > 0 {
+            
+            let placeholderInsets = self.placeholderInsets
+            
+            var textContainerSize = size
+            textContainerSize.width -= placeholderInsets.left + placeholderInsets.right
+            textContainerSize.height -= placeholderInsets.top + placeholderInsets.bottom
+            
+            let placeholderUsedRect = self.placeholderUsedRect(
+                
+                attributedPlaceholder: attributedPlaceholder,
+                textContainerSize: textContainerSize
+            )
+            
+            let size = CGSize(
+                
+                width: ceil(placeholderInsets.left + placeholderUsedRect.maxX + placeholderInsets.right),
+                height: ceil(placeholderInsets.top + placeholderUsedRect.maxY + placeholderInsets.bottom)
+            )
+            return size
+        }
+        else {
+            
+            return super.sizeThatFits(size)
+        }
+    }
+    
+    open override func sizeToFit() {
+        
+        if self.isEmpty == true,
+           let attributedPlaceholder = self.attributedPlaceholder,
+           attributedPlaceholder.length > 0 {
+            
+            let placeholderUsedRect = self.placeholderUsedRect(
+                
+                attributedPlaceholder: attributedPlaceholder,
+                textContainerSize: .zero
+            )
+            
+            let placeholderInsets = self.placeholderInsets
+            self.bounds.size = CGSize(
+                
+                width: ceil(placeholderInsets.left + placeholderUsedRect.maxX + placeholderInsets.right),
+                height: ceil(placeholderInsets.top + placeholderUsedRect.maxY + placeholderInsets.bottom)
+            )
+        }
+        else {
+            
+            return super.sizeToFit()
+        }
+    }
+    
     // MARK: - Private API
     
     private func commonInitializer() {
@@ -291,10 +347,28 @@ import UIKit
         placeholderTextStorage.addLayoutManager(self.placeholderLayoutManager)
         
         self.placeholderTextContainer.lineFragmentPadding = self.textContainer.lineFragmentPadding
-        self.placeholderTextContainer.size = CGSize(width: self.textContainer.size.width, height: 0.0)
+        self.placeholderTextContainer.size = self.textContainer.size
         
         self.placeholderLayoutManager.ensureLayout(for: self.placeholderTextContainer)
         
-        return self.placeholderLayoutManager.lineFragmentUsedRect(forGlyphAt: 0, effectiveRange: nil)
+        return self.placeholderLayoutManager.lineFragmentUsedRect(forGlyphAt: 0, effectiveRange: nil, withoutAdditionalLayout: true)
+    }
+    
+    private func placeholderUsedRect(attributedPlaceholder: NSAttributedString, textContainerSize: CGSize) -> CGRect {
+        
+        if self.placeholderTextContainer.layoutManager == nil {
+            
+            self.placeholderLayoutManager.addTextContainer(self.placeholderTextContainer)
+        }
+        
+        let placeholderTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
+        placeholderTextStorage.addLayoutManager(self.placeholderLayoutManager)
+        
+        self.placeholderTextContainer.lineFragmentPadding = self.textContainer.lineFragmentPadding
+        self.placeholderTextContainer.size = textContainerSize
+        
+        self.placeholderLayoutManager.ensureLayout(for: self.placeholderTextContainer)
+        
+        return self.placeholderLayoutManager.usedRect(for: self.placeholderTextContainer)
     }
 }
