@@ -49,35 +49,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     // MARK: - Private Properties
     
     private var calculatedHeight: CGFloat {
-        let calculationTextStorage: NSTextStorage?
-        if let attributedText = attributedText, attributedText.length > 0 {
-            calculationTextStorage = NSTextStorage(attributedString: attributedText)
-        } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
-            calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
-        } else {
-            calculationTextStorage = nil
-        }
-        var height: CGFloat
-        if let _calculationTextStorage = calculationTextStorage {
-            
-            _calculationTextStorage.addLayoutManager(calculationLayoutManager)
-            
-            calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
-            calculationTextContainer.size = CGSize(width: textContainer.size.width, height: 0.0) 
-            
-            calculationLayoutManager.ensureLayout(for: calculationTextContainer)
-            
-            height = ceil(calculationLayoutManager.usedRect(for: calculationTextContainer).height + contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom)
-            
-            if height < minHeight {
-                height = minHeight
-            } else if height > maxHeight {
-                height = maxHeight
-            }
-        } else {
-            height = minHeight
-        }
-        return height
+        makeCalculatedSize(textContainerSize: CGSize(width: textContainer.size.width, height: 0.0)).height
     }
     
     private let calculationLayoutManager = NSLayoutManager()
@@ -179,6 +151,22 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
     }
     
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        
+        var textContainerSize = size
+        
+        textContainerSize.width -= contentInset.left + textContainerInset.left + textContainerInset.right + contentInset.right
+        textContainerSize.height -= contentInset.top + textContainerInset.top + textContainerInset.bottom + contentInset.bottom
+        
+        let size = makeCalculatedSize(textContainerSize: textContainerSize)
+        return size
+    }
+    
+    open override func sizeToFit() {
+        
+        self.bounds.size = makeCalculatedSize(textContainerSize: .zero)
+    }
+    
     // MARK: - Object Lifecycle
     
     deinit {
@@ -259,6 +247,43 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         }
         
         return ceil(height)
+    }
+    
+    private func makeCalculatedSize(textContainerSize: CGSize) -> CGSize {
+        let calculationTextStorage: NSTextStorage?
+        if let attributedText = attributedText, attributedText.length > 0 {
+            calculationTextStorage = NSTextStorage(attributedString: attributedText)
+        } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
+            calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
+        } else {
+            calculationTextStorage = nil
+        }
+        var size = CGSize.zero
+        if let _calculationTextStorage = calculationTextStorage {
+            
+            _calculationTextStorage.addLayoutManager(calculationLayoutManager)
+            
+            calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
+            calculationTextContainer.size = textContainerSize
+            
+            calculationLayoutManager.ensureLayout(for: calculationTextContainer)
+            
+            let usedRect = calculationLayoutManager.usedRect(for: calculationTextContainer)
+            size = CGSize(
+                
+                width: ceil(contentInset.left + textContainerInset.left + usedRect.maxX + textContainerInset.right + contentInset.right),
+                height: ceil(contentInset.top + textContainerInset.top + usedRect.maxY + textContainerInset.bottom + contentInset.bottom)
+            )
+            
+            if size.height < minHeight {
+                size.height = minHeight
+            } else if size.height > maxHeight {
+                size.height = maxHeight
+            }
+        } else {
+            size.height = minHeight
+        }
+        return size
     }
     
     private func refreshHeightIfNeededAnimated(_ animated: Bool) {
