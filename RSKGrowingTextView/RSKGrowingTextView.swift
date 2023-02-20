@@ -201,9 +201,11 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
         showsVerticalScrollIndicator = false
         
         for constraint in constraints {
-            if constraint.firstAttribute == .height && constraint.relation == .equal {
+            if constraint.firstAttribute == .height, constraint.relation == .equal, type(of: constraint) == NSLayoutConstraint.self {
                 heightConstraint = constraint
                 heightConstraint?.constant = calculatedHeight
+                invalidateIntrinsicContentSize()
+                setNeedsLayout()
                 break
             }
         }
