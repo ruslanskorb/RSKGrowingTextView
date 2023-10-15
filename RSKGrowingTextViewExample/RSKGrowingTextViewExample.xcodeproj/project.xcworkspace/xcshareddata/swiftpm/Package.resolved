@@ -3,7 +3,7 @@
     {
       "identity" : "rskplaceholdertextview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ruslanskorb/RSKPlaceholderTextView.git",
+      "location" : "https://github.com/ruslanskorb/RSKPlaceholderTextView",
       "state" : {
         "branch" : "develop",
         "revision" : "437b8d4ea65639c700964b95885b1f57bee10a8e"

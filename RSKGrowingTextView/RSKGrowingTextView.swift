@@ -158,7 +158,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        
         var textContainerSize = size
         
         textContainerSize.width -= contentInset.left + textContainerInset.left + textContainerInset.right + contentInset.right
@@ -169,16 +168,10 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     open override func sizeToFit() {
-        
         self.bounds.size = makeCalculatedSize(textContainerSize: .zero)
     }
     
     // MARK: - Object Lifecycle
-    
-    deinit {
-        
-        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
-    }
     
     required public init?(coder aDecoder: NSCoder) {
         if #available(iOS 16.0, *) {
@@ -216,7 +209,6 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             layoutManager.addTextContainer(textContainer)
             self.init(frame: .zero, textContainer: textContainer)
         }
-        
     }
     
     // MARK: - Actions
