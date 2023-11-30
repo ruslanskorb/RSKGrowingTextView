@@ -1,4 +1,4 @@
-## RSKGrowingTextView [![Swift 5.1](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager Compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange.svg?style=flat")](https://swift.org/package-manager/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg)](https://cocoapods.org) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+## RSKGrowingTextView [![Swift 5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Swift Package Manager Compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange.svg?style=flat")](https://swift.org/package-manager/) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/RSKGrowingTextView.svg)](https://cocoapods.org) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 <p align="center">
   <img src="RSKGrowingTextViewExample/RSKGrowingTextViewExample.gif" alt="Sample">
