@@ -160,8 +160,8 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         var textContainerSize = size
         
-        textContainerSize.width -= contentInset.left + textContainerInset.left + textContainerInset.right + contentInset.right
-        textContainerSize.height -= contentInset.top + textContainerInset.top + textContainerInset.bottom + contentInset.bottom
+        textContainerSize.width -= textContainerInset.left + textContainerInset.right
+        textContainerSize.height -= textContainerInset.top + textContainerInset.bottom
         
         let size = makeCalculatedSize(textContainerSize: textContainerSize)
         return size
@@ -225,7 +225,11 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             calculationLayoutManager.addTextContainer(calculationTextContainer)
         }
         
-        contentInset = UIEdgeInsets(top: 1.0, left: 0.0, bottom: 1.0, right: 0.0)
+        var textContainerInset = textContainerInset
+        textContainerInset.top += 1.0
+        textContainerInset.bottom += 1.0
+        self.textContainerInset = textContainerInset
+        
         scrollsToTop = false
         showsVerticalScrollIndicator = false
         
@@ -243,7 +247,7 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
-        var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+        var height = textContainerInset.top + textContainerInset.bottom
         
         var numberOfNonEmptyLines = 0
         if #available(iOS 16.0, *), let calculationTextLayoutManager {
@@ -335,10 +339,8 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
             }
         }
         
-        size = CGSize(
-            width: ceil(contentInset.left + textContainerInset.left + size.width + textContainerInset.right + contentInset.right),
-            height: ceil(contentInset.top + textContainerInset.top + size.height + textContainerInset.bottom + contentInset.bottom)
-        )
+        size.height = ceil(textContainerInset.top + size.height + textContainerInset.bottom)
+        size.width = ceil(textContainerInset.left + size.width + textContainerInset.right)
         
         let minHeight = minHeight
         if size.height < minHeight {
@@ -402,7 +404,12 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func scrollRectToVisibleConsideringInsets(_ rect: CGRect) {
-        let insets = UIEdgeInsets(top: contentInset.top + textContainerInset.top, left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, bottom: contentInset.bottom + textContainerInset.bottom, right: contentInset.right + textContainerInset.right)
+        let insets = UIEdgeInsets(
+            top: contentInset.top + textContainerInset.top,
+            left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding,
+            bottom: contentInset.bottom + textContainerInset.bottom,
+            right: contentInset.right + textContainerInset.right + textContainer.lineFragmentPadding
+        )
         let visibleRect = bounds.inset(by: insets)
         
         guard !visibleRect.contains(rect) else {
