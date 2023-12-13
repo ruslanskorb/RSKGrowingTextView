@@ -48,13 +48,16 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     
     // MARK: - Private Properties
     
-    private var calculatedHeight: CGFloat {
-        makeCalculatedSize(textContainerSize: CGSize(width: textContainer.size.width, height: 0.0)).height
-    }
+    private var calculatedHeight: CGFloat { makeCalculatedSize(textContainerSize: CGSize(width: textContainer.size.width, height: 0.0)).height }
     
     private let calculationLayoutManager = NSLayoutManager()
     
     private let calculationTextContainer = NSTextContainer()
+    
+    private var _calculationTextLayoutManager: NSObject?
+    
+    @available(iOS 16.0, *)
+    private var calculationTextLayoutManager: NSTextLayoutManager? { _calculationTextLayoutManager as? NSTextLayoutManager }
     
     private weak var heightConstraint: NSLayoutConstraint?
     
@@ -101,17 +104,20 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     /// The current displayed number of lines. This value is calculated at run time.
     open var numberOfLines: Int {
         var numberOfLines = 0
-        var index = 0
-        var lineRange = NSRange()
-        let numberOfGlyphs = layoutManager.numberOfGlyphs
-        while index < numberOfGlyphs {
-            if #available(iOS 9.0, *) {
-                _ = layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange, withoutAdditionalLayout: true)
-            } else {
-                _ = layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+        if #available(iOS 16.0, *), let textLayoutManager {
+            textLayoutManager.enumerateTextLayoutFragments(from: textLayoutManager.documentRange.location, options: [.ensuresLayout]) { layoutFragment in
+                numberOfLines += layoutFragment.textLineFragments.count
+                return true
             }
-            index = NSMaxRange(lineRange)
-            numberOfLines += 1
+        } else {
+            var index = 0
+            var lineRange = NSRange()
+            let numberOfGlyphs = layoutManager.numberOfGlyphs
+            while index < numberOfGlyphs {
+                _ = layoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange)
+                index = NSMaxRange(lineRange)
+                numberOfLines += 1
+            }
         }
         return numberOfLines
     }
@@ -152,51 +158,78 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        
         var textContainerSize = size
         
-        textContainerSize.width -= contentInset.left + textContainerInset.left + textContainerInset.right + contentInset.right
-        textContainerSize.height -= contentInset.top + textContainerInset.top + textContainerInset.bottom + contentInset.bottom
+        textContainerSize.width -= textContainerInset.left + textContainerInset.right
+        textContainerSize.height -= textContainerInset.top + textContainerInset.bottom
         
         let size = makeCalculatedSize(textContainerSize: textContainerSize)
         return size
     }
     
     open override func sizeToFit() {
-        
         self.bounds.size = makeCalculatedSize(textContainerSize: .zero)
     }
     
     // MARK: - Object Lifecycle
     
-    deinit {
-        
-        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
-    }
-    
     required public init?(coder aDecoder: NSCoder) {
-        calculationLayoutManager.addTextContainer(calculationTextContainer)
+        if #available(iOS 16.0, *) {
+            let calculationTextLayoutManager = NSTextLayoutManager()
+            calculationTextLayoutManager.textContainer = calculationTextContainer
+            _calculationTextLayoutManager = calculationTextLayoutManager
+        } else {
+            calculationLayoutManager.addTextContainer(calculationTextContainer)
+        }
         super.init(coder: aDecoder)
         commonInitializer()
     }
     
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
-        calculationLayoutManager.addTextContainer(calculationTextContainer)
+        if #available(iOS 16.0, *) {
+            let calculationTextLayoutManager = NSTextLayoutManager()
+            calculationTextLayoutManager.textContainer = calculationTextContainer
+            _calculationTextLayoutManager = calculationTextLayoutManager
+        } else {
+            calculationLayoutManager.addTextContainer(calculationTextContainer)
+        }
         super.init(frame: frame, textContainer: textContainer)
         commonInitializer()
+    }
+    
+    @available(iOS 16.0, *)
+    public convenience init(usingTextLayoutManager: Bool) {
+        if usingTextLayoutManager {
+            self.init(frame: .zero, textContainer: nil)
+        } else {
+            let layoutManager = NSLayoutManager()
+            let textStorage = NSTextStorage()
+            textStorage.addLayoutManager(layoutManager)
+            let textContainer = NSTextContainer()
+            layoutManager.addTextContainer(textContainer)
+            self.init(frame: .zero, textContainer: textContainer)
+        }
     }
     
     // MARK: - Actions
     
     @objc private func handleRSKGrowingTextViewTextDidChangeNotification(_ notification: Notification) {
-        
         refreshHeightIfNeededAnimated(animateHeightChange)
     }
     
     // MARK: - Private API
     
     private func commonInitializer() {
-        contentInset = UIEdgeInsets(top: 1.0, left: 0.0, bottom: 1.0, right: 0.0)
+        if #available(iOS 16.0, *), textLayoutManager == nil {
+            _calculationTextLayoutManager = nil
+            calculationLayoutManager.addTextContainer(calculationTextContainer)
+        }
+        
+        var textContainerInset = textContainerInset
+        textContainerInset.top += 1.0
+        textContainerInset.bottom += 1.0
+        self.textContainerInset = textContainerInset
+        
         scrollsToTop = false
         showsVerticalScrollIndicator = false
         
@@ -214,20 +247,28 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func heightForNumberOfLines(_ numberOfLines: Int) -> CGFloat {
-        var height = contentInset.top + contentInset.bottom + textContainerInset.top + textContainerInset.bottom
+        var height = textContainerInset.top + textContainerInset.bottom
         
         var numberOfNonEmptyLines = 0
-        var index = 0
-        let numberOfGlyphs = calculationLayoutManager.numberOfGlyphs
-        while index < numberOfGlyphs && numberOfNonEmptyLines < numberOfLines {
-            var lineRange = NSRange()
-            if #available(iOS 9.0, *) {
-                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange, withoutAdditionalLayout: true).height
-            } else {
-                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange).height
+        if #available(iOS 16.0, *), let calculationTextLayoutManager {
+            calculationTextLayoutManager.enumerateTextLayoutFragments(from: calculationTextLayoutManager.documentRange.location, options: [.ensuresLayout]) { layoutFragment in
+                var index = 0
+                while index < layoutFragment.textLineFragments.count, numberOfNonEmptyLines < numberOfLines {
+                    height += layoutFragment.textLineFragments[index].typographicBounds.height
+                    index += 1
+                    numberOfNonEmptyLines += 1
+                }
+                return numberOfNonEmptyLines < numberOfLines
             }
-            index = NSMaxRange(lineRange)
-            numberOfNonEmptyLines += 1
+        } else {
+            var index = 0
+            let numberOfGlyphs = calculationLayoutManager.numberOfGlyphs
+            while index < numberOfGlyphs, numberOfNonEmptyLines < numberOfLines {
+                var lineRange = NSRange()
+                height += calculationLayoutManager.lineFragmentRect(forGlyphAt: index, effectiveRange: &lineRange).height
+                index = NSMaxRange(lineRange)
+                numberOfNonEmptyLines += 1
+            }
         }
         
         let numberOfEmptyLines = (numberOfLines - numberOfNonEmptyLines)
@@ -252,39 +293,67 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func makeCalculatedSize(textContainerSize: CGSize) -> CGSize {
-        let calculationTextStorage: NSTextStorage?
-        if let attributedText = attributedText, attributedText.length > 0 {
-            calculationTextStorage = NSTextStorage(attributedString: attributedText)
-        } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
-            calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
-        } else {
-            calculationTextStorage = nil
-        }
         var size = CGSize.zero
-        if let _calculationTextStorage = calculationTextStorage {
-            
-            _calculationTextStorage.addLayoutManager(calculationLayoutManager)
-            
-            calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
-            calculationTextContainer.size = textContainerSize
-            
-            calculationLayoutManager.ensureLayout(for: calculationTextContainer)
-            
-            let usedRect = calculationLayoutManager.usedRect(for: calculationTextContainer)
-            size = CGSize(
+        
+        if #available(iOS 16.0, *), let calculationTextLayoutManager {
+            let calculationTextContentStorage: NSTextContentStorage?
+            if let attributedText, attributedText.length > 0 {
+                calculationTextContentStorage = NSTextContentStorage()
+                calculationTextContentStorage?.attributedString = attributedText
+            } else if let attributedPlaceholder, attributedPlaceholder.length > 0 {
+                calculationTextContentStorage = NSTextContentStorage()
+                calculationTextContentStorage?.attributedString = attributedPlaceholder
+            } else {
+                calculationTextContentStorage = nil
+            }
+            if let calculationTextContentStorage {
+                calculationTextContentStorage.addTextLayoutManager(calculationTextLayoutManager)
                 
-                width: ceil(contentInset.left + textContainerInset.left + usedRect.maxX + textContainerInset.right + contentInset.right),
-                height: ceil(contentInset.top + textContainerInset.top + usedRect.maxY + textContainerInset.bottom + contentInset.bottom)
-            )
-            
-            if size.height < minHeight {
-                size.height = minHeight
-            } else if size.height > maxHeight {
-                size.height = maxHeight
+                calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
+                calculationTextContainer.size = textContainerSize
+                
+                calculationTextLayoutManager.textContainer = calculationTextContainer
+                calculationTextLayoutManager.ensureLayout(for: calculationTextLayoutManager.documentRange)
+                
+                size = calculationTextLayoutManager.usageBoundsForTextContainer.size
             }
         } else {
-            size.height = minHeight
+            let calculationTextStorage: NSTextStorage?
+            if let attributedText = attributedText, attributedText.length > 0 {
+                calculationTextStorage = NSTextStorage(attributedString: attributedText)
+            } else if let attributedPlaceholder = attributedPlaceholder, attributedPlaceholder.length > 0 {
+                calculationTextStorage = NSTextStorage(attributedString: attributedPlaceholder)
+            } else {
+                calculationTextStorage = nil
+            }
+            if let calculationTextStorage {
+                calculationTextStorage.addLayoutManager(calculationLayoutManager)
+                
+                calculationTextContainer.lineFragmentPadding = textContainer.lineFragmentPadding
+                calculationTextContainer.size = textContainerSize
+                
+                calculationLayoutManager.ensureLayout(for: calculationTextContainer)
+                
+                let usedRect = calculationLayoutManager.usedRect(for: calculationTextContainer)
+                size = CGSize(width: usedRect.maxX, height: usedRect.maxY)
+            }
         }
+        
+        size.height = ceil(textContainerInset.top + size.height + textContainerInset.bottom)
+        size.width = ceil(textContainerInset.left + size.width + textContainerInset.right)
+        
+        let minHeight = minHeight
+        if size.height < minHeight {
+            size.height = minHeight
+            return size
+        }
+        
+        let maxHeight = maxHeight
+        if size.height > maxHeight {
+            size.height = maxHeight
+            return size
+        }
+        
         return size
     }
     
@@ -300,8 +369,15 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
                 self.superview?.layoutIfNeeded()
             }
             typealias HeightChangeCompletionBlockType = ((_ oldHeight: CGFloat, _ newHeight: CGFloat) -> Void)
-            let heightChangeCompletionBlock: HeightChangeCompletionBlockType = { (oldHeight: CGFloat, newHeight: CGFloat) -> Void in
-                self.layoutManager.ensureLayout(for: self.textContainer)
+            let heightChangeCompletionBlock: HeightChangeCompletionBlockType = { [weak self] (oldHeight: CGFloat, newHeight: CGFloat) -> Void in
+                guard let self else {
+                    return
+                }
+                if #available(iOS 16.0, *), let textLayoutManager = self.textLayoutManager {
+                    textLayoutManager.ensureLayout(for: textLayoutManager.documentRange)
+                } else {
+                    self.layoutManager.ensureLayout(for: self.textContainer)
+                }
                 self.scrollToVisibleCaretIfNeeded()
                 self.growingTextViewDelegate?.growingTextView?(self, didChangeHeightFrom: oldHeight, to: newHeight)
             }
@@ -328,7 +404,12 @@ public typealias HeightChangeUserActionsBlockType = ((_ oldHeight: CGFloat, _ ne
     }
     
     private func scrollRectToVisibleConsideringInsets(_ rect: CGRect) {
-        let insets = UIEdgeInsets(top: contentInset.top + textContainerInset.top, left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding, bottom: contentInset.bottom + textContainerInset.bottom, right: contentInset.right + textContainerInset.right)
+        let insets = UIEdgeInsets(
+            top: contentInset.top + textContainerInset.top,
+            left: contentInset.left + textContainerInset.left + textContainer.lineFragmentPadding,
+            bottom: contentInset.bottom + textContainerInset.bottom,
+            right: contentInset.right + textContainerInset.right + textContainer.lineFragmentPadding
+        )
         let visibleRect = bounds.inset(by: insets)
         
         guard !visibleRect.contains(rect) else {

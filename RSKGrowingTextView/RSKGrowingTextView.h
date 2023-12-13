@@ -17,7 +17,6 @@
 // `RSKGrowingTextView` is a light-weight UITextView subclass that automatically grows and shrinks based on the size of user input and can be constrained by maximum and minimum number of lines.
 
 #import <UIKit/UIKit.h>
-@import RSKPlaceholderTextView;
 
 //! Project version number for RSKGrowingTextView.
 FOUNDATION_EXPORT double RSKGrowingTextViewVersionNumber;
