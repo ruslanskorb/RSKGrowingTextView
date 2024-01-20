@@ -503,7 +503,7 @@
 			repositoryURL = "https://github.com/ruslanskorb/RSKPlaceholderTextView";
 			requirement = {
 				kind = exactVersion;
-				version = 7.0.0;
+				version = 8.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
