@@ -171,7 +171,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Ruslan Skorb";
 				TargetAttributes = {
 					B811FDEC1C1F31C3006CB9D6 = {
@@ -397,7 +397,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
@@ -416,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanskorb.RSKGrowingTextViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSKGrowingTextViewExample/RSKGrowingTextViewExample-Bridging-Header.h";
@@ -503,7 +503,7 @@
 			repositoryURL = "https://github.com/ruslanskorb/RSKPlaceholderTextView";
 			requirement = {
 				kind = exactVersion;
-				version = 8.0.0;
+				version = 8.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -28,7 +28,7 @@ A light-weight UITextView subclass that automatically grows and shrinks based on
 
         github "ruslanskorb/RSKGrowingTextView"
 
-2.  Run `carthage update`, then follow the [additional steps required](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the iOS and/or Mac frameworks into your project.
+2.  Run `carthage update --use-xcframeworks`, then follow the [additional steps required](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the iOS and/or Mac frameworks into your project.
 
 ## Demo
 
@@ -39,8 +39,7 @@ Have fun. Figure out hooks for customization.
 
 Ruslan Skorb
 
-- http://github.com/ruslanskorb
-- http://twitter.com/ruslanskorb
+- https://github.com/ruslanskorb
 - ruslan.skorb@gmail.com
 
 ## License

@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "RSKGrowingTextView", targets: ["RSKGrowingTextView"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ruslanskorb/RSKPlaceholderTextView.git", from: "8.0.0")
+        .package(url: "https://github.com/ruslanskorb/RSKPlaceholderTextView.git", from: "8.0.1")
     ],
     targets: [
         .target(name: "RSKGrowingTextView", dependencies: ["RSKPlaceholderTextView"], path: "RSKGrowingTextView")

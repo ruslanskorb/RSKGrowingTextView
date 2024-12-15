@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ruslanskorb/RSKPlaceholderTextView",
       "state" : {
-        "revision" : "e10548ab6b9f848e95f4a8edd1083d6894261144",
-        "version" : "8.0.0"
+        "revision" : "fe0f152cb4cf892cd4893fab50a61e502e5ea033",
+        "version" : "8.0.1"
       }
     }
   ],
